@@ -25,3 +25,6 @@ In the 'dsnn' module, <br />
 "dynapse_output.h" configures the output neurons to send spikes to the ROLLS chip. <br />
 "reset.h" resets the learning algorithm and the network. <br />
 "record.h" records the neural activity on chips. <br />
+
+# Usage
+After running $make_file_onlinele.sh$ to build the project, run $run_onlinele.sh$. 
