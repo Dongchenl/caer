@@ -5,27 +5,29 @@ The caer code has to compile and run with libcaer and run with the DYNAP neuromo
 # On-line learning code
 The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/'. <br />
 In the 'dsnn' module, <br />
-"dsnn.h" defines the parameters. <br />
-"basic.h" defines the basic low-level functions. <br />
-"encode_neuron.h" encodes the address of silicon neurons. <br />
-"synapse.h" builds physical synapses on neuromorphic hardware. <br />
-"layers.h" builds feature neurons. <br />
-"update.h" updates the synapse weight from software to neuromorphic hardware. <br />
-"create_column.h" creates multiple groups of output neurons. <br />
-"build_column.h" connects the feature neurons to output neurons. <br />
-"scale_up_down.h" simulates the mapping neurons of the recognition network. <br />
-"create_nsm.h" creates the neural state machines to build the winner-take-all mechanism. <br />
-"learn_column.h" learns the synapse weight between feature neurons and the output neurons. <br />
-"stability.h" checks whether a simulated saccade is stopped. <br />
-"load_save.h" loads and saves the learned synapse weights. <br />
-"learn.h" controls the writing and reading of the ring buffer. <br />
-"biases.h" configures the biases of the analog neuron circuits on chip. <br />
-"initialize.h" initializes the network. <br />
-"build_nsm.h" builds synapses of the neural state machines. <br /> 
-"connect_davis.h" configures the input to receive events from DAVIS/DVS silicon retina. <br />
-"dynapse_output.h" configures the output neurons to send spikes to the ROLLS chip. <br />
-"reset.h" resets the learning algorithm and the network. <br />
-"record.h" records the neural activity on chips. <br />
+File Name | Main Usage
+------------ | -------------
+"dsnn.h" | Define the parameters. 
+"basic.h" | Define the basic low-level functions.
+"encode_neuron.h" | Encode the address of silicon neurons.
+"synapse.h" | Build physical synapses on neuromorphic hardware. 
+"layers.h" | Build feature neurons. 
+"update.h" | Update the synapse weight from software to neuromorphic hardware. 
+"create_column.h" | Create multiple groups of output neurons. 
+"build_column.h" | Connect the feature neurons to output neurons. 
+"scale_up_down.h" | Simulate the mapping neurons of the recognition network. 
+"create_nsm.h" | Create the neural state machines to build the winner-take-all mechanism. 
+"learn_column.h" | Learn the synapse weight between feature neurons and the output neurons. 
+"stability.h" | Check whether a simulated saccade is stopped. 
+"load_save.h" | Load and saves the learned synapse weights. 
+"learn.h" | Control the writing and reading of the ring buffer. 
+"biases.h" | Configure the biases of the analog neuron circuits on chip. 
+"initialize.h" | Initialize the network. 
+"build_nsm.h" | Build synapses of the neural state machines. 
+"connect_davis.h" | Configure the input to receive events from DAVIS/DVS silicon retina. 
+"dynapse_output.h" | Configure the output neurons to send spikes to the ROLLS chip. 
+"reset.h" | Reset the learning algorithm and the network.
+"record.h" | Record the neural activity on chips. 
 
 # Usage
 Run <br />
