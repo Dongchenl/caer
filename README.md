@@ -1,8 +1,9 @@
 # caer
 
 The caer code has to compile and run with libcaer and run with the DYNAP neuromorphic hardware connected to the computer. <br />
-The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/'. <br />
 
+# On-line learning code
+The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/'. <br />
 In the 'dsnn' module, <br />
 "dsnn.h" defines the parameters. <br />
 "basic.h" defines the basic low-level functions. <br />
