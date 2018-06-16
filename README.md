@@ -5,6 +5,7 @@ The caer code has to compile and run with libcaer and run with the DYNAP neuromo
 # On-line learning code
 The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/'. <br />
 In the 'dsnn' module, <br />
+
 File Name | Main Usage
 ------------ | -------------
 "dsnn.h" | Define the parameters. 
