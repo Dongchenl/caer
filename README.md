@@ -27,4 +27,7 @@ In the 'dsnn' module, <br />
 "record.h" records the neural activity on chips. <br />
 
 # Usage
-After running $make_file_onlinele.sh$ to build the project, run $run_onlinele.sh$. 
+Run
+$make_file_onlinele.sh 
+Run 
+$run_onlinele.sh
