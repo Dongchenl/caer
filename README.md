@@ -1,6 +1,6 @@
 # caer
 
-The caer code has to compile and run with libcaer and run with the DYNAP neuromorphic hardware connected to the computer. <br />
+Caer is a software that configures, monitors, analyses the data from neuromorphic chips. 
 
 # On-line learning code
 The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/'. <br />
@@ -32,6 +32,13 @@ reset.h | Reset the learning algorithm and the network.
 record.h | Record the neural activity on chips. 
 
 # Usage
+
+## Software dependency
+Caer has to compile and run with libcaer: https://github.com/ldcyx/libcaer.git <br />
+
+## Hardware dependency
+Caer has to run with the DYNAP neuromorphic hardware connected to the computer. <br />
+
 Run <br />
 $make_file_onlinele.sh <br />
 Run <br />
