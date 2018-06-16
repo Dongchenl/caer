@@ -14,7 +14,7 @@ basic.h | Define the basic low-level functions.
 encode_neuron.h | Encode the address of silicon neurons.
 synapse.h | Build physical synapses on neuromorphic hardware. 
 layers.h | Build feature neurons. 
-update.h | Update the synapse weight from software to neuromorphic hardware. 
+update.h | Update the synapse weights in memory and update them on neuromorphic hardware. 
 create_column.h | Create multiple groups of output neurons. 
 build_column.h | Connect the feature neurons to output neurons. 
 scale_up_down.h | Simulate the mapping neurons of the recognition network. 
