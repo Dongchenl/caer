@@ -1,6 +1,6 @@
 # Introduction
-Code for on-line learning and to interface the DYNAP neuromorphic chip is in this repository. <br />
-Code to interface the omni-directional robot and the ROLLS neuromorphic chip is in repository:
+* Code for on-line learning and to interface the DYNAP neuromorphic chip is in this repository. <br />
+* Code to interface the omni-directional robot and the ROLLS neuromorphic chip is in repository:
 https://github.com/ldcyx/omnibot_rolls.git
 
 # Caer
