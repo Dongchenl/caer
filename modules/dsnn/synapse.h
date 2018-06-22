@@ -193,7 +193,7 @@ void buildSynapseDSNN(caerModuleData moduleData, uint32_t pre_neuron_addr, uint3
 	int32_t core_neuron_id, new_core_neuron_id;
 
 	//for SRAM
-	if (real_or_virtual_synapse != EXTERNAL_REAL_SYNAPSE) {
+	if (real_or_virtual_synapse != EXTERNAL_REAL_SYNAPSE && real_or_virtual_synapse != VIRTUAL_SYNAPSE_WITHOUT_SRAM) {
 		sram_found = 0;
 		sram_slot_found = 0;
 		for (sram_id_t = 1; sram_id_t < TOTAL_SRAM_NUM; sram_id_t++) { //search for available SRAM
@@ -268,7 +268,7 @@ void buildSynapseDSNN(caerModuleData moduleData, uint32_t pre_neuron_addr, uint3
 			}
 		}
 		if (availableCamFound == 1) {
-			if (real_or_virtual_synapse != VIRTUAL_SYNAPSE) {
+			if (real_or_virtual_synapse != VIRTUAL_SYNAPSE && real_or_virtual_synapse != VIRTUAL_SYNAPSE_WITHOUT_SRAM) {
 				writeCamDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr, cam_id, synapse_type, virtual_neuron_addr_enable, 0);
 				memory.cam_map->buffer2d[post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][cam_id] = 1;
 			}
@@ -289,7 +289,7 @@ void buildSynapseDSNN(caerModuleData moduleData, uint32_t pre_neuron_addr, uint3
 		memory.synapse_map_cam_no->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = (int32_t) cam_id;
 		memory.synapse_map_sram_no->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = (int32_t) sram_id;
 	}
-	if (real_or_virtual_synapse == VIRTUAL_SYNAPSE) {
+	if (real_or_virtual_synapse == VIRTUAL_SYNAPSE || real_or_virtual_synapse == VIRTUAL_SYNAPSE_WITHOUT_SRAM) {
 //		printf("Build one virtual synapse. \n");
 //		printf("Pre: %d, Post: %d. \n", binary_conversion(pre_neuron_addr), binary_conversion(post_neuron_addr));
 		memory.connection_map->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = 1;

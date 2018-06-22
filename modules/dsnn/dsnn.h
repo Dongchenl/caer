@@ -6,11 +6,10 @@
 #ifndef NSMFILTER_H_
 #define NSMFILTER_H_
 
-#define LOAD_PREVIOUS_CONNECTIVITY 1 //0 //0 //1 //0 //0 //0 //0 //1 //0
+#define LOAD_PREVIOUS_CONNECTIVITY 0 //1 //0 //0 //1 //0 //0 //0 //0 //1 //0
 #define DAVIS_INPUT 1 //0 //1 //0
-#define ENABLE_OUTPUT_TO_ROLLS 0 //1 //1 //0 //1 //0 //1 //1 //0 //1 //0 //1 //0 //1 //0 //1// 0 //
-#define RECORD_OUTPUT_EVENTS 0 //0 //1 //0 //1 //0 //1 //0 //
-#define RECORD_INPUT_OUTPUT_EVENTS 1 //0
+#define ENABLE_OUTPUT_TO_ROLLS 0 //1 //0 //1 //0 //1 //1 //0 //1 //0 //1 //0 //1 //0 //1// 0 //
+#define RECORD_OUTPUT_EVENTS 0 //1 //0 //1 //0 //1 //0 //1 //0 //
 
 //#define LOAD_HALF_PREVIOUS_CONNECTIVITY 0 //1 //1 //0 //1
 //#define INPUT_NUM 2 //3 //2 //3 //2 //8 //10 //8 //4 //5
@@ -50,23 +49,29 @@ The best when the input layer is not right
 #define NUM_SPIKES_THRESHOULD 10 //20 //50 //10
 */
 
-#define SILENCE_CHECKING_PERIOD 5
-#define SILENCE_CHECKING_SPIKES_THRESHOULD 150 //100 //200 //500 //1000
-#define REFRACTORY_PERIOD 0 //100 //100
+#define SILENCE_CHECKING_PERIOD 20 //50 //ms
+#define OUPUT_NEURON_FIRING_CHECK_PERIOD 50 //ms
+#define CONSIDERING_PERIOD 100 //20 //100 //ms
+#define CONSIDERING_PERIOD_CHECK 500 //ms //50 //200 //250
 
-#define CONSIDERING_PERIOD 100 //60 //50 //80 //60 //50 //30 //20
+#define SILENCE_CHECKING_SPIKES_THRESHOULD 100 //400 //200 //100 //30 //15 //150 //100 //200 //500 //1000
+#define REFRACTORY_PERIOD 10 //0 //100 //0 //100 //100
+
+ //100 //60 //50 //80 //60 //50 //30 //20
 #define CONSIDERED_SPIKES_THRESHOULD 80 //100
-#define NUM_SPIKES_THRESHOULD 10 //20 //50 //50 //10
+#define NUM_SPIKES_THRESHOULD 2 //5 //0 //2 //10 //20 //50 //50 //10
 /************************************************************/
 //not important
-#define CHECK_STABILITY_PERIOD 10000 //5000 //2000 //5000
+#define CHECK_STABILITY_PERIOD (1000 * 5) //10000 //5000 //2000 //5000
 
-#define CONSIDERING_PERIOD_CHECK 50
+ //500 //50 //10 //50
 #define CONSIDERED_SPIKES_THRESHOULD_CHECK 0
 #define NUM_SPIKES_THRESHOULD_CHECK 5
 /************************************************************/
 
-#define SPIKE_REDUCED_NUM 40
+#define SPIKE_REDUCED_NUM 4 //40
+
+#define WEIGHT_THRESHOULD 0 //2 //40
 
 #define LEARNED_PIXELS_THRESHOLD 16 //* 2 //*2
 #define FEATURE_NEURONS_NUM_THRESHOLD 8 //* 2
@@ -144,7 +149,7 @@ The best when the input layer is not right
 #define SYNAPSE_UPGRADE_THRESHOLD_LUT_LENGTH 128 //800 //80
 
 //spike queue parameters
-#define SPIKE_QUEUE_LENGTH 2000000 //200000 too short for a learning with 5 second events
+#define SPIKE_QUEUE_LENGTH 10000000 //2000000 // * 5 //200000 too short for a learning with 5 second events
 #define SPIKE_QUEUE_WIDTH 2
 #define DYNAPSE_CONFIG_DYNAPSE_U0_SPECIAL 1
 
@@ -171,6 +176,7 @@ The best when the input layer is not right
 //total CAM number and available CAM number for learning
 #define FIRST_CAM_ID 0
 #define LAST_CAM_ID 63
+#define LAST_CAM_ID_OUTPUT_NEURON 60
 #define NON_PROTECTED_LAST_CAM_ID 62
 #define PROTECTED_FIRST_CAM_ID 63
 #define TOTAL_CAM_NUM 64
@@ -184,6 +190,7 @@ The best when the input layer is not right
 #define REAL_SYNAPSE_WITH_LEARNING 1
 #define EXTERNAL_REAL_SYNAPSE 2
 #define REAL_SYNAPSE_WITHOUT_LEARNING 3
+#define VIRTUAL_SYNAPSE_WITHOUT_SRAM 4
 
 //chip & core ID in standard neuron address format
 #define VIRTUAL_CHIP_ID 0

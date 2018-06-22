@@ -175,10 +175,6 @@ static void caerDSNNRun(caerModuleData moduleData, caerEventPacketContainer in, 
 		recordOutputEvents(spike);
 	}
 
-	if (record_input_output_events == 1) {
-		recordInputOutputEvents(spike);
-	}
-
 }
 
 

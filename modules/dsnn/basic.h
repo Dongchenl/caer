@@ -39,6 +39,7 @@ struct DSNN_memory {
 	simple2DBufferInt synapse_map_sram_no;
 	simple2DBufferInt post_neuron_activity_record;
 	simple2DBufferInt post_neuron_taken_record; //Problem of the chip: inhibition is not strong enough
+	simple2DBufferInt learned_post_synaptic_neuron;
 
 	//for saving connectivity
 	simple2DBufferInt virtual_neuron_addr;
@@ -75,6 +76,14 @@ struct DSNN_memory {
 	uint64_t start_rd_pointer_feature;
 	uint64_t wr_pointer_feature;
 
+	simple2DBufferLong spike_fifo_output;
+	uint64_t start_rd_pointer_output;
+	uint64_t wr_pointer_output;
+
+	simple2DBufferLong 	spike_fifo_output_firing_check;
+	uint64_t start_rd_pointer_output_firing_check;
+	uint64_t wr_pointer_output_firing_check;
+
 	//learning algorithm
 	uint64_t package_spike_counter;
 	uint64_t pre_rd_pointer_old;
@@ -100,18 +109,27 @@ static int num_config_chip_U3 = 0;
 
 static int64_t learned_pixels_above_threshold = 0;
 
-static int8_t filtered_input_ready = 0;
+static int8_t filtered_input_ready = 1;
 
 static int usb_packet_maximum_size = USB_PACKET_MAXIMUM_SIZE_INITIALIZATION;
 
-static int8_t nsm_winner_ready = 0;
-static int64_t nsm_winner_id = 255;
-static int64_t nsm_winner_spikes_num = 0;
+//static int8_t nsm_winner_ready = 0;
+//static int64_t nsm_winner_id = 255;
+//static int64_t nsm_winner_spikes_num = 0;
 
 static int64_t learned_object_num = 0;
 
 static int64_t last_spike_num = 0;
 static uint64_t last_wr_pointer = 0;
+
+static int8_t not_ready_added = 1;
+
+static int32_t nsm_winner_neuron_id;
+static int32_t micro_saccade_finished = 1;
+
+static int8_t output_neuron_firing = 1;
+
+//static int64_t spike_num = 0;
 
 static void setBiasBitsDSNN(caerModuleData moduleData, uint32_t chip_id, uint32_t core_id, const char *biasName,
 	uint8_t coarseValue, uint16_t fineValue, const char *lowHigh, const char *npBias);
@@ -187,6 +205,10 @@ void initializeMemory(void) {
 	//fourth spike queue
 	memory.spike_fifo_feature = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
 
+	memory.spike_fifo_output = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
+
+	memory.spike_fifo_output_firing_check = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
+
 	//connection between neurons
 	memory.connection_map = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) TOTAL_NEURON_NUM_ON_BOARD);
 	memory.non_learning_connection_map = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) TOTAL_NEURON_NUM_ON_BOARD);
@@ -216,6 +238,7 @@ void initializeMemory(void) {
 	memory.post_neuron_activity_record = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) POST_NEURON_ACTIVITY_SIZE_WIDTH);
 	memory.post_neuron_taken_record = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) POST_NEURON_TAKEN_SIZE_WIDTH);
 
+	memory.learned_post_synaptic_neuron = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) 1);
 }
 /*
 int binary_conversion(int64_t num) {

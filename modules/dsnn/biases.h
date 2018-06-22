@@ -23,6 +23,7 @@ void resetBiasesDSNN(caerModuleData moduleData) {
 			//sweep all the biases
 			if (chip_id == DYNAPSE_CONFIG_DYNAPSE_U0) {
 				if (core_id == 0) {
+					/*
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_AHTAU_N", 7, 35, "LowBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_AHTHR_N", 7, 0, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_AHW_P", 7, 0, "HighBias", "PBias");
@@ -30,7 +31,7 @@ void resetBiasesDSNN(caerModuleData moduleData) {
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_CASC_N", 7, 0, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_DC_P", 7, 0, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_NMDA_N", 7, 0, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 1, 254, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 3, 30, "HighBias", "NBias"); //1, 254
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU1_N", 1, 200, "LowBias", "NBias"); //1, 225
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU2_N", 6, 15, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_THR_N", 3, 225, "HighBias", "NBias"); //3, 225 //3, 241
@@ -42,11 +43,37 @@ void resetBiasesDSNN(caerModuleData moduleData) {
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_S_P", 7, 0, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_S_P", 0, 255, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_S_P", 7, 0, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_F_N", 0, 100, "HighBias", "NBias"); //0, 200 //0, 80 //0, 255
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_F_N", 0, 200, "HighBias", "NBias"); //0, 200 //0, 80 //0, 255
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_F_N", 0, 205, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_S_N", 7, 0, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_S_N", 7, 0, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "PULSE_PWLK_P", 4, 40, "HighBias", "PBias"); //5, 109
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "R2R_P", 4, 85, "HighBias", "PBias");
+					*/
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_AHTAU_N", 7, 35, "LowBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_AHTHR_N", 7, 0, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_AHW_P", 7, 0, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_BUF_P", 3, 80, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_CASC_N", 7, 0, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_DC_P", 7, 0, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_NMDA_N", 7, 0, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 4, 30, "HighBias", "NBias"); //3, 254
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU1_N", 1, 43, "LowBias", "NBias"); //2, 225 //1, 225
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU2_N", 6, 15, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_THR_N", 7, 5, "HighBias", "NBias"); //3, 241
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_F_P", 2, 254, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_F_P", 3, 153, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_F_P", 1, 200, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_F_P", 4, 20, "HighBias", "PBias"); //4, 8 //3, 8
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_S_P", 0, 255, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_S_P", 7, 0, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_S_P", 0, 255, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_S_P", 7, 0, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_F_N", 0, 60, "HighBias", "NBias"); //0, 200
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_F_N", 0, 205, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_S_N", 7, 0, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_S_N", 7, 0, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PULSE_PWLK_P", 5, 109, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "R2R_P", 4, 85, "HighBias", "PBias");
 				}
 				if (core_id == 1) {
@@ -92,7 +119,7 @@ void resetBiasesDSNN(caerModuleData moduleData) {
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_F_P", 5, 150, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_F_P", 3, 255, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_F_P", 5, 105, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_S_P", 3, 156, "HighBias", "PBias"); //3, 105
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_S_P", 3, 255, "HighBias", "PBias"); //3, 105
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_S_P", 5, 26, "HighBias", "PBias"); //5, 26
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_S_P", 7, 0, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_S_P", 0, 255, "HighBias", "PBias");
@@ -110,7 +137,7 @@ void resetBiasesDSNN(caerModuleData moduleData) {
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_CASC_N", 7, 0, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_DC_P", 7, 0, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_NMDA_N", 7, 0, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 1, 254, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 4, 30, "HighBias", "NBias"); //1, 254
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU1_N", 1, 225, "LowBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU2_N", 6, 15, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_THR_N", 3, 241, "HighBias", "NBias");
@@ -163,22 +190,22 @@ void resetBiasesDSNN(caerModuleData moduleData) {
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_CASC_N", 7, 0, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_DC_P", 7, 0, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_NMDA_N", 7, 0, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 1, 254, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_RFR_N", 0, 254, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU1_N", 1, 225, "LowBias", "NBias"); //1, 225
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_TAU2_N", 6, 15, "HighBias", "NBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "IF_THR_N", 3, 241, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_F_P", 2, 254, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_F_P", 1, 254, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_F_P", 3, 153, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_F_P", 1, 200, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_F_P", 5, 8, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_S_P", 0, 255, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_S_P", 7, 0, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_S_P", 0, 255, "HighBias", "PBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_S_P", 7, 0, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_F_P", 0, 200, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_F_P", 6, 8, "HighBias", "PBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_THR_S_P", 3, 255, "HighBias", "PBias"); //3, 105
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPIE_TAU_S_P", 5, 26, "HighBias", "PBias"); //5, 26
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_THR_S_P", 1, 200, "HighBias", "PBias"); //3, 200
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "NPDPII_TAU_S_P", 4, 8, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_F_N", 0, 255, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_F_N", 0, 205, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_S_N", 7, 0, "HighBias", "NBias");
-					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_S_N", 7, 0, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_F_N", 0, 255, "HighBias", "NBias");
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_EXC_S_N", 0, 255, "HighBias", "NBias"); //2, 120
+					setBiasBitsDSNN(moduleData, chip_id, core_id, "PS_WEIGHT_INH_S_N", 0, 255, "HighBias", "NBias"); //7, 0
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "PULSE_PWLK_P", 5, 109, "HighBias", "PBias");
 					setBiasBitsDSNN(moduleData, chip_id, core_id, "R2R_P", 4, 85, "HighBias", "PBias");
 				}

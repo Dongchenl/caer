@@ -1,5 +1,5 @@
 static void loadConnectivity(caerModuleData moduleData);
-static void saveConnectivity(caerModuleData moduleData);
+static void saveConnectivity(void);
 
 void loadConnectivity(caerModuleData moduleData) {
 	    int i = 0, j = 0;
@@ -113,7 +113,7 @@ void loadConnectivity(caerModuleData moduleData) {
 		printf("The learned connectivity is loaded from file \'saved_connectivity.txt\'. \n");
 }
 
-void saveConnectivity(caerModuleData moduleData) {
+void saveConnectivity() {
 	FILE *f = fopen("saved_connectivity.txt", "w");
 	if (f == NULL)
 	{

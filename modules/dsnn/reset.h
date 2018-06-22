@@ -3,7 +3,6 @@ static bool resetNetworkDSNN(caerModuleData moduleData);
 
 static int8_t load_previous_connectivity = LOAD_PREVIOUS_CONNECTIVITY; //0; //1;
 static int8_t record_output_events = RECORD_OUTPUT_EVENTS;
-static int8_t record_input_output_events = RECORD_INPUT_OUTPUT_EVENTS;
 static FILE *f;
 static char letter;
 static int32_t testing_object_id = 0;
@@ -47,6 +46,7 @@ bool resetNetworkDSNN(caerModuleData moduleData) {
 		buildNSM(moduleData);
 
 		buildColumn(moduleData);
+		connectOutputSelectingNeuronsToColumns(moduleData);
 	}
 	else {
 		loadConnectivity(moduleData);
@@ -65,5 +65,6 @@ bool resetNetworkDSNN(caerModuleData moduleData) {
 	}
 
 	network_reseted = 1;
+
 	return (true);
 }
