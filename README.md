@@ -25,7 +25,7 @@ scale_up_down.h | Simulate the mapping neurons of the recognition network.
 create_nsm.h | Create the neural state machines to build the winner-take-all mechanism. 
 learn_column.h | Learn the synapse weight between feature neurons and the output neurons. 
 stability.h | Check whether a simulated saccade is stopped. 
-load_save.h | Load and saves the learned synapse weights. 
+load_save.h | Load and save the learned synapse weights. 
 learn.h | Control the writing and reading of the ring buffer. 
 biases.h | Configure the biases of the analog neuron circuits on chip. 
 initialize.h | Initialize the network. 
