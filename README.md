@@ -44,7 +44,7 @@ Caer has to compile and run with libcaer: https://github.com/ldcyx/libcaer.git <
 Caer has to run with the DYNAP neuromorphic hardware connected to the computer. The connection is through a USB 2.0/3.0 interface. <br />
 
 ## Commands
-Use the commands below to compile and run Caer. <br />
+Run the scripts below to compile and run Caer. <br />
 Compile Caer: <br />
 $sh make_file_onlinele.sh <br />
 Run Caer: <br />
