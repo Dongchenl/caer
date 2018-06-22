@@ -45,7 +45,7 @@ Caer has to run with the DYNAP neuromorphic hardware connected to the computer. 
 
 ## Commands
 Run the scripts below to compile and run Caer. <br />
-Compile Caer: <br />
+To compile Caer: <br />
 $sh make_file_onlinele.sh <br />
-Run Caer: <br />
+To run Caer: <br />
 $sh run_onlinele.sh <br />
