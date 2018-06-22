@@ -41,7 +41,7 @@ record.h | Record the neural activity on chip.
 Caer has to compile and run with libcaer: https://github.com/ldcyx/libcaer.git <br />
 
 ## Hardware dependency
-Caer has to run with the DYNAP neuromorphic hardware connected to the computer. <br />
+Caer has to run with the DYNAP neuromorphic hardware connected to the computer. The connection is through high-speed USB interface. <br />
 
 Run <br />
 $make_file_onlinele.sh <br />
