@@ -33,7 +33,7 @@ build_nsm.h | Build synapses of the neural state machines.
 connect_davis.h | Configure the input to receive events from DAVIS/DVS silicon retina. 
 dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
-record.h | Record the neural activity on chips. 
+record.h | Record the neural activity on chip. 
 
 # Usage
 
