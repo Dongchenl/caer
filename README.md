@@ -4,11 +4,12 @@
 https://github.com/ldcyx/omnibot_rolls.git
 
 # Caer
-Caer is a software that configures, monitors, analyzes the data from neuromorphic chips. 
+Caer is a software that configures and monitors the DYNAP neuromorphic chips and analyzes the firing activity of the silicon neurons on the chips. 
+It enables online reconfiguration of the connectivity between neurons and the weights of synapses. 
 
 # On-line learning code
 The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/' (https://github.com/ldcyx/caer/tree/master/modules/dsnn). <br />
-In the 'dsnn' module, <br />
+In the 'dsnn' module, there are 22 scripts. They are written in C. The main usage of the scripts is listed below. <br />
 
 File Name | Main Usage
 ------------ | -------------
@@ -27,13 +28,13 @@ learn_column.h | Learn the synapse weight between feature neurons and the output
 stability.h | Check whether a simulated saccade is stopped. 
 load_save.h | Load and save the learned synapse weights. 
 learn.h | Control the writing and reading of the ring buffer. 
-biases.h | Configure the biases of the analog neuron and synapse circuits on chip. 
+biases.h | Configure the biases of the analog neuron and synapse circuits on the chips. 
 initialize.h | Initialize the network. 
 build_nsm.h | Build synapses of the Neural State Machines (NSMs) to form a Winner-Take-All (WTA) mechanism. 
 connect_davis.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
 dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
-record.h | Record the neural activity on chip. 
+record.h | Record the neural activity on the chips. 
 
 # Usage
 
