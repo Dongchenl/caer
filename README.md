@@ -12,7 +12,7 @@ In the 'dsnn' module, <br />
 
 File Name | Main Usage
 ------------ | -------------
-dsnn.c | The main function. It is called in the main loop of caer. 
+dsnn.c | The main function. It is called in the main loop of Caer. 
 dsnn.h | Define the parameters. 
 basic.h | Define the basic low-level functions.
 encode_neuron.h | Encode the address of silicon neurons.
