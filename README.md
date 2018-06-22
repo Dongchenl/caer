@@ -30,7 +30,7 @@ learn.h | Control the writing and reading of the ring buffer.
 biases.h | Configure the biases of the analog neuron and synapse circuits on chip. 
 initialize.h | Initialize the network. 
 build_nsm.h | Build synapses of the Neural State Machines (NSMs) to form a Winner-Take-All (WTA) mechanism. 
-connect_davis.h | Configure the input to receive events from DAVIS/DVS silicon retina. 
+connect_davis.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
 dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
 record.h | Record the neural activity on chip. 
