@@ -92,7 +92,7 @@ void learnColumnConfigure(caerModuleData moduleData, int64_t output_neuron_addre
 			}
 		}
 	}
-//	printf("@@@@ Learned %d EX synapses, %d IN synapses. \n", num_ex, num_in);
+	printf("Learn %d EX synapses, %d IN synapses. \n", num_ex, num_in);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U0);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U1);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U2);

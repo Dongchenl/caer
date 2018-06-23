@@ -207,6 +207,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 					updateConfiguration(moduleData);
 					micro_saccade_finished = 1;
 					printf("The learning is finished. \n");
+					learned_object_num += 1;
 //					return; //No return. Otherwise lose the rest of the events in the package.
 				}
 			}

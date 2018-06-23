@@ -25,7 +25,7 @@ void learnNSMConfigure(caerModuleData moduleData, int64_t state_neuron_address) 
 			if (ei == 1) {
 				int64_t delta_weight = memory.delta_weight_map_ex->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET];
 				weight = memory.weight_map->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET];
-				if (delta_weight > 0) { //10
+				if (delta_weight > 0) {
 					memory.weight_map->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] =
 						weight + 1;
 					weight = weight + 1;
@@ -60,7 +60,7 @@ void learnNSMConfigure(caerModuleData moduleData, int64_t state_neuron_address) 
 				cam_id = memory.synapse_map_cam_no->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET];
 				writeCamDSNN(moduleData, (uint32_t) pre_neuron_addr, (uint32_t) post_neuron_addr, 0, (uint32_t) cam_id, synapse_type, 0, 0);
 				memory.synapse_map_type->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = synapse_type;
-//				printf("Update NSM synapse. \n");
+				printf("Update NSM synapse. \n");
 			}
 		}
 	}

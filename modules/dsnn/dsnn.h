@@ -1,65 +1,31 @@
-/*
- * Created on: Feb. 2016
- * Author: dongchen@ini.uzh.ch
- */
-
 #ifndef NSMFILTER_H_
 #define NSMFILTER_H_
 
-#define LOAD_PREVIOUS_CONNECTIVITY 0 //1 //0 //0 //1 //0 //0 //0 //0 //1 //0
-#define DAVIS_INPUT 1 //0 //1 //0
-#define ENABLE_OUTPUT_TO_ROLLS 0 //1 //0 //1 //0 //1 //1 //0 //1 //0 //1 //0 //1 //0 //1// 0 //
-#define RECORD_OUTPUT_EVENTS 0 //1 //0 //1 //0 //1 //0 //1 //0 //
+#define LOAD_PREVIOUS_CONNECTIVITY 0
+#define DAVIS_INPUT 1
+#define ENABLE_OUTPUT_TO_ROLLS 0
+#define RECORD_OUTPUT_EVENTS 0
 
-//#define LOAD_HALF_PREVIOUS_CONNECTIVITY 0 //1 //1 //0 //1
-//#define INPUT_NUM 2 //3 //2 //3 //2 //8 //10 //8 //4 //5
-#define CONNECTIVITY_NUM 50000 //30000 //12958 //14393 //12958 //27352
-#define PATTERN_PERIOD_TESTING 2 //1 //3 //1 //100000 almost //50000 us almost //100000 yes //0 s no //1 yes //1 //3
-#define INTERVAL_OF_PATTERN_PERIOD_TESTING 1 //100000 almost //50000 us almost //100000 yes //1 s no //0 yes //1 //1
+#define CONNECTIVITY_NUM 50000
+#define PATTERN_PERIOD_TESTING 2
+#define INTERVAL_OF_PATTERN_PERIOD_TESTING 1
 
 #define TRAINING_OBJECT_NUM 4
-#define ARTIFICIAL_WINNERS_NUM TRAINING_OBJECT_NUM //4 //1 //4
-#define KERNEL_EDGE 8 //6 //8
+#define ARTIFICIAL_WINNERS_NUM TRAINING_OBJECT_NUM
+#define KERNEL_EDGE 8
 
-#define MAXIMUM_RECORDED_EVENTS_PER_OBJECT 20000 //1000 //20000
-/*
-The best when the input layer is not right
-#define SILENCE_CHECKING_PERIOD 5 //10
-#define SILENCE_CHECKING_SPIKES_THRESHOULD 500 //100 //500 //100
-
-#define CONSIDERING_PERIOD 5 //10 //50 //1000 //500 //2000 //500 //100 //5 //10 //10 //50
-#define CONSIDERING_PERIOD_CHECK 50 //5
-#define REFRACTORY_PERIOD 100 //1000 //10 //10 //50
-#define CHECK_STABILITY_PERIOD 1000 // * 2
-#define CONSIDERED_SPIKES_THRESHOULD 100 //500 //1000 //2000 //200
-#define CONSIDERED_SPIKES_THRESHOULD_CHECK 0
-#define NUM_SPIKES_THRESHOULD 10 //50 //10 //50 //10 //50 //500 //40 //8
-#define NUM_SPIKES_THRESHOULD_CHECK 5 //2 //10
-*/
-
-/************************************************************/
-//important
-/*
-#define SILENCE_CHECKING_PERIOD 5
-#define SILENCE_CHECKING_SPIKES_THRESHOULD 500 //1000 * 2
-#define REFRACTORY_PERIOD 0 //100
-
-#define CONSIDERING_PERIOD 60 //100 //50 //30 // 2 //20
-#define CONSIDERED_SPIKES_THRESHOULD 100
-#define NUM_SPIKES_THRESHOULD 10 //20 //50 //10
-*/
+#define MAXIMUM_RECORDED_EVENTS_PER_OBJECT 20000
 
 #define SILENCE_CHECKING_PERIOD 20 //50 //ms
 #define OUPUT_NEURON_FIRING_CHECK_PERIOD 50 //ms
 #define CONSIDERING_PERIOD 100 //20 //100 //ms
 #define CONSIDERING_PERIOD_CHECK 500 //ms //50 //200 //250
 
-#define SILENCE_CHECKING_SPIKES_THRESHOULD 100 //400 //200 //100 //30 //15 //150 //100 //200 //500 //1000
-#define REFRACTORY_PERIOD 10 //0 //100 //0 //100 //100
+#define SILENCE_CHECKING_SPIKES_THRESHOULD 100
+#define REFRACTORY_PERIOD 10
 
- //100 //60 //50 //80 //60 //50 //30 //20
-#define CONSIDERED_SPIKES_THRESHOULD 80 //100
-#define NUM_SPIKES_THRESHOULD 2 //5 //0 //2 //10 //20 //50 //50 //10
+#define CONSIDERED_SPIKES_THRESHOULD 80
+#define NUM_SPIKES_THRESHOULD 2
 /************************************************************/
 //not important
 #define CHECK_STABILITY_PERIOD (1000 * 5) //10000 //5000 //2000 //5000
