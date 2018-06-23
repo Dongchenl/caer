@@ -3,15 +3,5 @@
 /usr/local/share/caer/caer_edvs.so
 /usr/local/share/caer/caer_davis.so
 /usr/local/share/caer/caer_dynapse.so
-/usr/local/share/caer/caer_input_file.so
-/usr/local/share/caer/caer_input_net_tcp_client.so
-/usr/local/share/caer/caer_input_net_socket_client.so
-/usr/local/share/caer/caer_output_file.so
-/usr/local/share/caer/caer_output_net_tcp_server.so
-/usr/local/share/caer/caer_output_net_tcp_client.so
-/usr/local/share/caer/caer_output_net_udp.so
-/usr/local/share/caer/caer_output_net_socket_server.so
-/usr/local/share/caer/caer_output_net_socket_client.so
-/usr/local/share/caer/caer_statistics.so
 /usr/local/share/caer/caer_visualizer.so
 /usr/local/bin/caer-ctl
