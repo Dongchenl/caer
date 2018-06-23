@@ -3918,14 +3918,6 @@
             <attr key="runAtStartup" type="bool">true</attr>
             <attr key="setCams" type="bool">false</attr>
         </node>
-        <node name="poissonSpikeGen" path="/poissonSpikeGen/">
-            <attr key="Run" type="bool">true</attr>
-            <attr key="logLevel" type="byte">5</attr>
-            <attr key="moduleId" type="short">7</attr>
-            <attr key="moduleInput" type="string">1[12]</attr>
-            <attr key="moduleLibrary" type="string">libpoissonspikegen</attr>
-            <attr key="runAtStartup" type="bool">true</attr>
-        </node>
         <node name="dsnn" path="/dsnn/">
             <attr key="logLevel" type="byte">5</attr>
             <attr key="moduleId" type="short">3</attr>
