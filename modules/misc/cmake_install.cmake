@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/dynapse/caer/modules/misc
+# Install script for directory: /home/dongchen/caer/modules/misc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dongchen/dynapse/caer/modules/misc/in/cmake_install.cmake")
-  include("/home/dongchen/dynapse/caer/modules/misc/out/cmake_install.cmake")
+  include("/home/dongchen/caer/modules/misc/in/cmake_install.cmake")
+  include("/home/dongchen/caer/modules/misc/out/cmake_install.cmake")
 
 endif()
 

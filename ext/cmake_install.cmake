@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/dynapse/caer/ext
+# Install script for directory: /home/dongchen/caer/ext
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

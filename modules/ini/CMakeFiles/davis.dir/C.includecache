@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/ini/davis.c
+/home/dongchen/caer/modules/ini/davis.c
 davis_utils.h
-/home/dongchen/dynapse/caer/modules/ini/davis_utils.h
+/home/dongchen/caer/modules/ini/davis_utils.h
 libcaer/events/sample.h
 -
 
-/home/dongchen/dynapse/caer/modules/ini/davis_utils.h
+/home/dongchen/caer/modules/ini/davis_utils.h
 main.h
-/home/dongchen/dynapse/caer/modules/ini/main.h
+/home/dongchen/caer/modules/ini/main.h
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/ini/base/mainloop.h
+/home/dongchen/caer/modules/ini/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/ini/base/module.h
+/home/dongchen/caer/modules/ini/base/module.h
 libcaer/events/packetContainer.h
 -
 libcaer/events/special.h

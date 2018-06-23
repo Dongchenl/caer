@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/fpgaspikegen/fpgaspikegen.c
+/home/dongchen/caer/modules/fpgaspikegen/fpgaspikegen.c
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/fpgaspikegen/base/mainloop.h
+/home/dongchen/caer/modules/fpgaspikegen/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/fpgaspikegen/base/module.h
+/home/dongchen/caer/modules/fpgaspikegen/base/module.h
 libcaer/devices/dynapse.h
 -
 libcaer/events/spike.h

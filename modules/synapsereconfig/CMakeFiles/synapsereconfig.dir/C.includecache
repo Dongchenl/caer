@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/synapsereconfig/synapsereconfig.c
+/home/dongchen/caer/modules/synapsereconfig/synapsereconfig.c
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/synapsereconfig/base/mainloop.h
+/home/dongchen/caer/modules/synapsereconfig/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/synapsereconfig/base/module.h
+/home/dongchen/caer/modules/synapsereconfig/base/module.h
 libcaer/devices/dynapse.h
 -
 libcaer/events/spike.h

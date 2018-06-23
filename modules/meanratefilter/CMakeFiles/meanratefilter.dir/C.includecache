@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/meanratefilter/meanratefilter.c
+/home/dongchen/caer/modules/meanratefilter/meanratefilter.c
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/meanratefilter/base/mainloop.h
+/home/dongchen/caer/modules/meanratefilter/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/meanratefilter/base/module.h
+/home/dongchen/caer/modules/meanratefilter/base/module.h
 ext/buffers.h
-/home/dongchen/dynapse/caer/modules/meanratefilter/ext/buffers.h
+/home/dongchen/caer/modules/meanratefilter/ext/buffers.h
 ext/portable_time.h
-/home/dongchen/dynapse/caer/modules/meanratefilter/ext/portable_time.h
+/home/dongchen/caer/modules/meanratefilter/ext/portable_time.h
 ext/colorjet/colorjet.h
-/home/dongchen/dynapse/caer/modules/meanratefilter/ext/colorjet/colorjet.h
+/home/dongchen/caer/modules/meanratefilter/ext/colorjet/colorjet.h
 time.h
 -
 libcaer/devices/dynapse.h
@@ -26,7 +26,7 @@ libcaer/events/spike.h
 libcaer/events/frame.h
 -
 modules/ini/dynapse_utils.h
-/home/dongchen/dynapse/caer/modules/meanratefilter/modules/ini/dynapse_utils.h
+/home/dongchen/caer/modules/meanratefilter/modules/ini/dynapse_utils.h
 
 base/mainloop.h
 main.h

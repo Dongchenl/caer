@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/dynapse/caer/modules/framestatistics
+# Install script for directory: /home/dongchen/caer/modules/framestatistics
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

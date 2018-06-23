@@ -6,37 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/visualizer/ext/sfml/helpers.hpp
+/home/dongchen/caer/modules/visualizer/ext/sfml/helpers.hpp
 SFML/Graphics.hpp
 -
 
-/home/dongchen/dynapse/caer/modules/visualizer/ext/sfml/line.hpp
+/home/dongchen/caer/modules/visualizer/ext/sfml/line.hpp
 SFML/Graphics.hpp
 -
 cmath
 -
 
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer.cpp
+/home/dongchen/caer/modules/visualizer/visualizer.cpp
 visualizer.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer.hpp
+/home/dongchen/caer/modules/visualizer/visualizer.hpp
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/visualizer/base/mainloop.h
+/home/dongchen/caer/modules/visualizer/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/visualizer/base/module.h
+/home/dongchen/caer/modules/visualizer/base/module.h
 ext/threads_ext.h
-/home/dongchen/dynapse/caer/modules/visualizer/ext/threads_ext.h
+/home/dongchen/caer/modules/visualizer/ext/threads_ext.h
 ext/resources/LiberationSans-Bold.h
-/home/dongchen/dynapse/caer/modules/visualizer/ext/resources/LiberationSans-Bold.h
+/home/dongchen/caer/modules/visualizer/ext/resources/LiberationSans-Bold.h
 ext/sfml/helpers.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/ext/sfml/helpers.hpp
+/home/dongchen/caer/modules/visualizer/ext/sfml/helpers.hpp
 modules/statistics/statistics.h
-/home/dongchen/dynapse/caer/modules/visualizer/modules/statistics/statistics.h
+/home/dongchen/caer/modules/visualizer/modules/statistics/statistics.h
 libcaer/ringbuffer.h
 -
 visualizer_handlers.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_handlers.hpp
+/home/dongchen/caer/modules/visualizer/visualizer_handlers.hpp
 visualizer_renderers.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_renderers.hpp
+/home/dongchen/caer/modules/visualizer/visualizer_renderers.hpp
 thread
 -
 mutex
@@ -44,9 +44,9 @@ mutex
 X11/Xlib.h
 -
 
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer.hpp
+/home/dongchen/caer/modules/visualizer/visualizer.hpp
 main.h
-/home/dongchen/dynapse/caer/modules/visualizer/main.h
+/home/dongchen/caer/modules/visualizer/main.h
 libcaer/events/packetContainer.h
 -
 GL/glew.h
@@ -58,11 +58,11 @@ atomic
 climits
 -
 
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_handlers.cpp
+/home/dongchen/caer/modules/visualizer/visualizer_handlers.cpp
 visualizer_handlers.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_handlers.hpp
+/home/dongchen/caer/modules/visualizer/visualizer_handlers.hpp
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/visualizer/base/mainloop.h
+/home/dongchen/caer/modules/visualizer/base/mainloop.h
 cmath
 -
 boost/algorithm/string.hpp
@@ -70,17 +70,17 @@ boost/algorithm/string.hpp
 libcaercpp/devices/dynapse.hpp
 -
 
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_handlers.hpp
+/home/dongchen/caer/modules/visualizer/visualizer_handlers.hpp
 visualizer.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer.hpp
+/home/dongchen/caer/modules/visualizer/visualizer.hpp
 
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_renderers.cpp
+/home/dongchen/caer/modules/visualizer/visualizer_renderers.cpp
 visualizer_renderers.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_renderers.hpp
+/home/dongchen/caer/modules/visualizer/visualizer_renderers.hpp
 ext/sfml/line.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/ext/sfml/line.hpp
+/home/dongchen/caer/modules/visualizer/ext/sfml/line.hpp
 ext/sfml/helpers.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/ext/sfml/helpers.hpp
+/home/dongchen/caer/modules/visualizer/ext/sfml/helpers.hpp
 libcaercpp/events/polarity.hpp
 -
 libcaercpp/events/frame.hpp
@@ -100,9 +100,9 @@ libcaercpp/devices/davis.hpp
 libcaercpp/devices/dynapse.hpp
 -
 
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer_renderers.hpp
+/home/dongchen/caer/modules/visualizer/visualizer_renderers.hpp
 visualizer.hpp
-/home/dongchen/dynapse/caer/modules/visualizer/visualizer.hpp
+/home/dongchen/caer/modules/visualizer/visualizer.hpp
 
 base/mainloop.h
 main.h

@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/dynapse/caer/modules/nullhopinterface
+# Install script for directory: /home/dongchen/caer/modules/nullhopinterface
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

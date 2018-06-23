@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/utils/tcpststat/tcpststat.c
+/home/dongchen/caer/utils/tcpststat/tcpststat.c
 stdlib.h
 -
 stdio.h
@@ -28,9 +28,9 @@ arpa/inet.h
 netinet/in.h
 -
 ext/nets.h
-/home/dongchen/dynapse/caer/utils/tcpststat/ext/nets.h
+/home/dongchen/caer/utils/tcpststat/ext/nets.h
 modules/misc/inout_common.h
-/home/dongchen/dynapse/caer/utils/tcpststat/modules/misc/inout_common.h
+/home/dongchen/caer/utils/tcpststat/modules/misc/inout_common.h
 libcaer/events/common.h
 -
 libcaer/events/polarity.h

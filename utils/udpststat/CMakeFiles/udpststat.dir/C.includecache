@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/utils/udpststat/udpststat.c
+/home/dongchen/caer/utils/udpststat/udpststat.c
 stdlib.h
 -
 stdio.h
@@ -28,11 +28,11 @@ arpa/inet.h
 netinet/in.h
 -
 ext/uthash/utarray.h
-/home/dongchen/dynapse/caer/utils/udpststat/ext/uthash/utarray.h
+/home/dongchen/caer/utils/udpststat/ext/uthash/utarray.h
 ext/uthash/utlist.h
-/home/dongchen/dynapse/caer/utils/udpststat/ext/uthash/utlist.h
+/home/dongchen/caer/utils/udpststat/ext/uthash/utlist.h
 modules/misc/inout_common.h
-/home/dongchen/dynapse/caer/utils/udpststat/modules/misc/inout_common.h
+/home/dongchen/caer/utils/udpststat/modules/misc/inout_common.h
 libcaer/events/common.h
 -
 signal.h

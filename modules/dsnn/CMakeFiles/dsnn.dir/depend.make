@@ -16,6 +16,7 @@ modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/initialize.h
 modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/layers.h
 modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/learn.h
 modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/learn_column.h
+modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/learn_nsm.h
 modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/load_save.h
 modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/record.h
 modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o: modules/dsnn/reset.h

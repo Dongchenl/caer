@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/statistics/statistics.c
+/home/dongchen/caer/modules/statistics/statistics.c
 statistics.h
-/home/dongchen/dynapse/caer/modules/statistics/statistics.h
+/home/dongchen/caer/modules/statistics/statistics.h
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/statistics/base/mainloop.h
+/home/dongchen/caer/modules/statistics/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/statistics/base/module.h
+/home/dongchen/caer/modules/statistics/base/module.h
 
-/home/dongchen/dynapse/caer/modules/statistics/statistics.h
+/home/dongchen/caer/modules/statistics/statistics.h
 main.h
-/home/dongchen/dynapse/caer/modules/statistics/main.h
+/home/dongchen/caer/modules/statistics/main.h
 libcaer/events/common.h
 -
 time.h
@@ -24,7 +24,7 @@ time.h
 sys/time.h
 -
 ext/portable_time.h
-/home/dongchen/dynapse/caer/modules/statistics/ext/portable_time.h
+/home/dongchen/caer/modules/statistics/ext/portable_time.h
 
 base/mainloop.h
 main.h

@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/dynapse/caer/modules/localfiltdownsample
+# Install script for directory: /home/dongchen/caer/modules/localfiltdownsample
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

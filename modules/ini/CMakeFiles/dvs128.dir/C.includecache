@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/dynapse/caer/modules/ini/dvs128.c
+/home/dongchen/caer/modules/ini/dvs128.c
 main.h
-/home/dongchen/dynapse/caer/modules/ini/main.h
+/home/dongchen/caer/modules/ini/main.h
 base/mainloop.h
-/home/dongchen/dynapse/caer/modules/ini/base/mainloop.h
+/home/dongchen/caer/modules/ini/base/mainloop.h
 base/module.h
-/home/dongchen/dynapse/caer/modules/ini/base/module.h
+/home/dongchen/caer/modules/ini/base/module.h
 libcaer/events/packetContainer.h
 -
 libcaer/events/special.h

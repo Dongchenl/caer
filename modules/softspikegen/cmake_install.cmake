@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/dynapse/caer/modules/softspikegen
+# Install script for directory: /home/dongchen/caer/modules/softspikegen
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,12 +47,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/dynapse/caer/modules/softspikegen/libsoftspikegen.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/softspikegen/libsoftspikegen.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/libsoftspikegen.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/libsoftspikegen.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/libsoftspikegen.so"
-         OLD_RPATH "/home/dongchen/dynapse/caer:"
+         OLD_RPATH "/home/dongchen/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/libsoftspikegen.so")
