@@ -124,30 +124,6 @@ boost/dll.hpp
 dlfcn.h
 -
 
-ext/portable_time.h
-stdbool.h
--
-time.h
--
-sys/time.h
--
-mach/mach.h
--
-mach/mach_time.h
--
-mach/clock.h
--
-mach/clock_types.h
--
-mach/mach_host.h
--
-mach/mach_port.h
--
-stdbool.h
--
-time.h
--
-
 ext/resources/LiberationSans-Bold.h
 
 ext/sshs/sshs.h
@@ -213,16 +189,4 @@ algorithm
 -
 vector
 -
-
-modules/statistics/statistics.h
-main.h
-modules/statistics/main.h
-libcaer/events/common.h
--
-time.h
--
-sys/time.h
--
-ext/portable_time.h
-modules/statistics/ext/portable_time.h
 

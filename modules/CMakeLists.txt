@@ -5,7 +5,7 @@
 #ADD_SUBDIRECTORY(framestatistics)
 ADD_SUBDIRECTORY(ini)
 #ADD_SUBDIRECTORY(misc)
-#ADD_SUBDIRECTORY(statistics)
+ADD_SUBDIRECTORY(statistics)
 ADD_SUBDIRECTORY(visualizer)
 #ADD_SUBDIRECTORY(meanratefilter)
 #ADD_SUBDIRECTORY(synapsereconfig)

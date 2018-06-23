@@ -8,13 +8,11 @@ modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: modules/visualize
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: modules/visualizer/visualizer_renderers.hpp
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: base/mainloop.h
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: base/module.h
-modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: ext/portable_time.h
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: ext/resources/LiberationSans-Bold.h
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: ext/sshs/sshs.h
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: ext/sshs/sshs.hpp
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: ext/threads_ext.h
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: main.h
-modules/visualizer/CMakeFiles/visualizer.dir/visualizer.cpp.o: modules/statistics/statistics.h
 
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer_handlers.cpp.o: modules/visualizer/visualizer.hpp
 modules/visualizer/CMakeFiles/visualizer.dir/visualizer_handlers.cpp.o: modules/visualizer/visualizer_handlers.cpp
