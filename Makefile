@@ -168,32 +168,6 @@ caer-bin/fast:
 .PHONY : caer-bin/fast
 
 #=============================================================================
-# Target rules for targets named bafilter
-
-# Build rule for target.
-bafilter: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bafilter
-.PHONY : bafilter
-
-# fast build rule for target.
-bafilter/fast:
-	$(MAKE) -f modules/backgroundactivityfilter/CMakeFiles/bafilter.dir/build.make modules/backgroundactivityfilter/CMakeFiles/bafilter.dir/build
-.PHONY : bafilter/fast
-
-#=============================================================================
-# Target rules for targets named frameenhancer
-
-# Build rule for target.
-frameenhancer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 frameenhancer
-.PHONY : frameenhancer
-
-# fast build rule for target.
-frameenhancer/fast:
-	$(MAKE) -f modules/frameenhancer/CMakeFiles/frameenhancer.dir/build.make modules/frameenhancer/CMakeFiles/frameenhancer.dir/build
-.PHONY : frameenhancer/fast
-
-#=============================================================================
 # Target rules for targets named dvs128
 
 # Build rule for target.
@@ -387,71 +361,6 @@ visualizer: cmake_check_build_system
 visualizer/fast:
 	$(MAKE) -f modules/visualizer/CMakeFiles/visualizer.dir/build.make modules/visualizer/CMakeFiles/visualizer.dir/build
 .PHONY : visualizer/fast
-
-#=============================================================================
-# Target rules for targets named meanratefilter
-
-# Build rule for target.
-meanratefilter: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 meanratefilter
-.PHONY : meanratefilter
-
-# fast build rule for target.
-meanratefilter/fast:
-	$(MAKE) -f modules/meanratefilter/CMakeFiles/meanratefilter.dir/build.make modules/meanratefilter/CMakeFiles/meanratefilter.dir/build
-.PHONY : meanratefilter/fast
-
-#=============================================================================
-# Target rules for targets named synapsereconfig
-
-# Build rule for target.
-synapsereconfig: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 synapsereconfig
-.PHONY : synapsereconfig
-
-# fast build rule for target.
-synapsereconfig/fast:
-	$(MAKE) -f modules/synapsereconfig/CMakeFiles/synapsereconfig.dir/build.make modules/synapsereconfig/CMakeFiles/synapsereconfig.dir/build
-.PHONY : synapsereconfig/fast
-
-#=============================================================================
-# Target rules for targets named fpgaspikegen
-
-# Build rule for target.
-fpgaspikegen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fpgaspikegen
-.PHONY : fpgaspikegen
-
-# fast build rule for target.
-fpgaspikegen/fast:
-	$(MAKE) -f modules/fpgaspikegen/CMakeFiles/fpgaspikegen.dir/build.make modules/fpgaspikegen/CMakeFiles/fpgaspikegen.dir/build
-.PHONY : fpgaspikegen/fast
-
-#=============================================================================
-# Target rules for targets named softspikegen
-
-# Build rule for target.
-softspikegen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 softspikegen
-.PHONY : softspikegen
-
-# fast build rule for target.
-softspikegen/fast:
-	$(MAKE) -f modules/softspikegen/CMakeFiles/softspikegen.dir/build.make modules/softspikegen/CMakeFiles/softspikegen.dir/build
-.PHONY : softspikegen/fast
-
-#=============================================================================
-# Target rules for targets named poissonspikegen
-
-# Build rule for target.
-poissonspikegen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 poissonspikegen
-.PHONY : poissonspikegen
-
-# fast build rule for target.
-poissonspikegen/fast:
-	$(MAKE) -f modules/poissonspikegen/CMakeFiles/poissonspikegen.dir/build.make modules/poissonspikegen/CMakeFiles/poissonspikegen.dir/build
-.PHONY : poissonspikegen/fast
 
 #=============================================================================
 # Target rules for targets named localfiltdownsample
@@ -775,8 +684,6 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... edit_cache"
-	@echo "... bafilter"
-	@echo "... frameenhancer"
 	@echo "... dvs128"
 	@echo "... davis"
 	@echo "... dynapse"
@@ -792,11 +699,6 @@ help:
 	@echo "... output_net_socket_client"
 	@echo "... statistics"
 	@echo "... visualizer"
-	@echo "... meanratefilter"
-	@echo "... synapsereconfig"
-	@echo "... fpgaspikegen"
-	@echo "... softspikegen"
-	@echo "... poissonspikegen"
 	@echo "... localfiltdownsample"
 	@echo "... dsnn"
 	@echo "... caer-ctl"
