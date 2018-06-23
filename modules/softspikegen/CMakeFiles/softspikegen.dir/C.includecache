@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/Documents/caer/modules/softspikegen/softspikegen.c
+/home/dongchen/caer/modules/softspikegen/softspikegen.c
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/softspikegen/base/mainloop.h
+/home/dongchen/caer/modules/softspikegen/base/mainloop.h
 base/module.h
-/home/dongchen/Documents/caer/modules/softspikegen/base/module.h
+/home/dongchen/caer/modules/softspikegen/base/module.h
 libcaer/devices/dynapse.h
 -
 libcaer/events/spike.h
 -
 modules/ini/dynapse_utils.h
-/home/dongchen/Documents/caer/modules/softspikegen/modules/ini/dynapse_utils.h
+/home/dongchen/caer/modules/softspikegen/modules/ini/dynapse_utils.h
 ext/portable_time.h
-/home/dongchen/Documents/caer/modules/softspikegen/ext/portable_time.h
+/home/dongchen/caer/modules/softspikegen/ext/portable_time.h
 ext/c11threads_posix.h
-/home/dongchen/Documents/caer/modules/softspikegen/ext/c11threads_posix.h
+/home/dongchen/caer/modules/softspikegen/ext/c11threads_posix.h
 math.h
 -
 

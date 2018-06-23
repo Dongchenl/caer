@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/Documents/caer/modules/backgroundactivityfilter/backgroundactivityfilter.c
+/home/dongchen/caer/modules/backgroundactivityfilter/backgroundactivityfilter.c
 main.h
-/home/dongchen/Documents/caer/modules/backgroundactivityfilter/main.h
+/home/dongchen/caer/modules/backgroundactivityfilter/main.h
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/backgroundactivityfilter/base/mainloop.h
+/home/dongchen/caer/modules/backgroundactivityfilter/base/mainloop.h
 base/module.h
-/home/dongchen/Documents/caer/modules/backgroundactivityfilter/base/module.h
+/home/dongchen/caer/modules/backgroundactivityfilter/base/module.h
 ext/buffers.h
-/home/dongchen/Documents/caer/modules/backgroundactivityfilter/ext/buffers.h
+/home/dongchen/caer/modules/backgroundactivityfilter/ext/buffers.h
 libcaer/events/polarity.h
 -
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/Documents/caer/modules/netparser
+# Install script for directory: /home/dongchen/caer/modules/netparser
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

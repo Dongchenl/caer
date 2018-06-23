@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/Documents/caer/modules/localfiltdownsample/localfiltdownsample.c
+/home/dongchen/caer/modules/localfiltdownsample/localfiltdownsample.c
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/localfiltdownsample/base/mainloop.h
+/home/dongchen/caer/modules/localfiltdownsample/base/mainloop.h
 base/module.h
-/home/dongchen/Documents/caer/modules/localfiltdownsample/base/module.h
+/home/dongchen/caer/modules/localfiltdownsample/base/module.h
 libcaer/devices/dynapse.h
 -
 

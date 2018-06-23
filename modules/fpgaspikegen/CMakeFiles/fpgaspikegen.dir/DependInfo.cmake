@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/dongchen/Documents/caer/modules/fpgaspikegen/fpgaspikegen.c" "/home/dongchen/Documents/caer/modules/fpgaspikegen/CMakeFiles/fpgaspikegen.dir/fpgaspikegen.c.o"
+  "/home/dongchen/caer/modules/fpgaspikegen/fpgaspikegen.c" "/home/dongchen/caer/modules/fpgaspikegen/CMakeFiles/fpgaspikegen.dir/fpgaspikegen.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "CM_BUILD_DIR=/home/dongchen/Documents/caer"
+  "CM_BUILD_DIR=/home/dongchen/caer"
   "CM_SHARE_DIR=/usr/local/share/caer"
   "HAVE_PTHREADS=1"
   "OS_LINUX=1"

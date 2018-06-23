@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/Documents/caer/modules/dsnn/basic.h
+/home/dongchen/caer/modules/dsnn/basic.h
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/dsnn/base/mainloop.h
+/home/dongchen/caer/modules/dsnn/base/mainloop.h
 base/module.h
-/home/dongchen/Documents/caer/modules/dsnn/base/module.h
+/home/dongchen/caer/modules/dsnn/base/module.h
 ext/buffers.h
-/home/dongchen/Documents/caer/modules/dsnn/ext/buffers.h
+/home/dongchen/caer/modules/dsnn/ext/buffers.h
 libcaer/devices/dynapse.h
-/home/dongchen/Documents/caer/modules/dsnn/libcaer/devices/dynapse.h
+/home/dongchen/caer/modules/dsnn/libcaer/devices/dynapse.h
 modules/ini/dynapse_utils.h
-/home/dongchen/Documents/caer/modules/dsnn/modules/ini/dynapse_utils.h
+/home/dongchen/caer/modules/dsnn/modules/ini/dynapse_utils.h
 math.h
 -
 stdio.h
@@ -34,73 +34,73 @@ Windows.h
 unistd.h
 -
 
-/home/dongchen/Documents/caer/modules/dsnn/biases.h
+/home/dongchen/caer/modules/dsnn/biases.h
 
-/home/dongchen/Documents/caer/modules/dsnn/build_column.h
+/home/dongchen/caer/modules/dsnn/build_column.h
 
-/home/dongchen/Documents/caer/modules/dsnn/build_nsm.h
+/home/dongchen/caer/modules/dsnn/build_nsm.h
 
-/home/dongchen/Documents/caer/modules/dsnn/connect_davis.h
+/home/dongchen/caer/modules/dsnn/connect_davis.h
 
-/home/dongchen/Documents/caer/modules/dsnn/create_column.h
+/home/dongchen/caer/modules/dsnn/create_column.h
 
-/home/dongchen/Documents/caer/modules/dsnn/create_nsm.h
+/home/dongchen/caer/modules/dsnn/create_nsm.h
 
-/home/dongchen/Documents/caer/modules/dsnn/dsnn.c
+/home/dongchen/caer/modules/dsnn/dsnn.c
 dsnn.h
-/home/dongchen/Documents/caer/modules/dsnn/dsnn.h
+/home/dongchen/caer/modules/dsnn/dsnn.h
 basic.h
-/home/dongchen/Documents/caer/modules/dsnn/basic.h
+/home/dongchen/caer/modules/dsnn/basic.h
 encode_neuron.h
-/home/dongchen/Documents/caer/modules/dsnn/encode_neuron.h
+/home/dongchen/caer/modules/dsnn/encode_neuron.h
 synapse.h
-/home/dongchen/Documents/caer/modules/dsnn/synapse.h
+/home/dongchen/caer/modules/dsnn/synapse.h
 layers.h
-/home/dongchen/Documents/caer/modules/dsnn/layers.h
+/home/dongchen/caer/modules/dsnn/layers.h
 update.h
-/home/dongchen/Documents/caer/modules/dsnn/update.h
+/home/dongchen/caer/modules/dsnn/update.h
 create_column.h
-/home/dongchen/Documents/caer/modules/dsnn/create_column.h
+/home/dongchen/caer/modules/dsnn/create_column.h
 build_column.h
-/home/dongchen/Documents/caer/modules/dsnn/build_column.h
+/home/dongchen/caer/modules/dsnn/build_column.h
 scale_up_down.h
-/home/dongchen/Documents/caer/modules/dsnn/scale_up_down.h
+/home/dongchen/caer/modules/dsnn/scale_up_down.h
 create_nsm.h
-/home/dongchen/Documents/caer/modules/dsnn/create_nsm.h
+/home/dongchen/caer/modules/dsnn/create_nsm.h
 learn_column.h
-/home/dongchen/Documents/caer/modules/dsnn/learn_column.h
+/home/dongchen/caer/modules/dsnn/learn_column.h
 learn_nsm.h
-/home/dongchen/Documents/caer/modules/dsnn/learn_nsm.h
+/home/dongchen/caer/modules/dsnn/learn_nsm.h
 stability.h
-/home/dongchen/Documents/caer/modules/dsnn/stability.h
+/home/dongchen/caer/modules/dsnn/stability.h
 load_save.h
-/home/dongchen/Documents/caer/modules/dsnn/load_save.h
+/home/dongchen/caer/modules/dsnn/load_save.h
 learn.h
-/home/dongchen/Documents/caer/modules/dsnn/learn.h
+/home/dongchen/caer/modules/dsnn/learn.h
 biases.h
-/home/dongchen/Documents/caer/modules/dsnn/biases.h
+/home/dongchen/caer/modules/dsnn/biases.h
 initialize.h
-/home/dongchen/Documents/caer/modules/dsnn/initialize.h
+/home/dongchen/caer/modules/dsnn/initialize.h
 build_nsm.h
-/home/dongchen/Documents/caer/modules/dsnn/build_nsm.h
+/home/dongchen/caer/modules/dsnn/build_nsm.h
 connect_davis.h
-/home/dongchen/Documents/caer/modules/dsnn/connect_davis.h
+/home/dongchen/caer/modules/dsnn/connect_davis.h
 dynapse_output.h
-/home/dongchen/Documents/caer/modules/dsnn/dynapse_output.h
+/home/dongchen/caer/modules/dsnn/dynapse_output.h
 reset.h
-/home/dongchen/Documents/caer/modules/dsnn/reset.h
+/home/dongchen/caer/modules/dsnn/reset.h
 record.h
-/home/dongchen/Documents/caer/modules/dsnn/record.h
+/home/dongchen/caer/modules/dsnn/record.h
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/dsnn/base/mainloop.h
+/home/dongchen/caer/modules/dsnn/base/mainloop.h
 base/module.h
-/home/dongchen/Documents/caer/modules/dsnn/base/module.h
+/home/dongchen/caer/modules/dsnn/base/module.h
 ext/buffers.h
-/home/dongchen/Documents/caer/modules/dsnn/ext/buffers.h
+/home/dongchen/caer/modules/dsnn/ext/buffers.h
 libcaer/devices/dynapse.h
-/home/dongchen/Documents/caer/modules/dsnn/libcaer/devices/dynapse.h
+/home/dongchen/caer/modules/dsnn/libcaer/devices/dynapse.h
 modules/ini/dynapse_utils.h
-/home/dongchen/Documents/caer/modules/dsnn/modules/ini/dynapse_utils.h
+/home/dongchen/caer/modules/dsnn/modules/ini/dynapse_utils.h
 math.h
 -
 stdio.h
@@ -116,41 +116,41 @@ signal.h
 unistd.h
 -
 
-/home/dongchen/Documents/caer/modules/dsnn/dsnn.h
+/home/dongchen/caer/modules/dsnn/dsnn.h
 main.h
-/home/dongchen/Documents/caer/modules/dsnn/main.h
+/home/dongchen/caer/modules/dsnn/main.h
 libcaer/events/spike.h
 -
 libcaer/events/frame.h
 -
 
-/home/dongchen/Documents/caer/modules/dsnn/dynapse_output.h
+/home/dongchen/caer/modules/dsnn/dynapse_output.h
 
-/home/dongchen/Documents/caer/modules/dsnn/encode_neuron.h
+/home/dongchen/caer/modules/dsnn/encode_neuron.h
 
-/home/dongchen/Documents/caer/modules/dsnn/initialize.h
+/home/dongchen/caer/modules/dsnn/initialize.h
 
-/home/dongchen/Documents/caer/modules/dsnn/layers.h
+/home/dongchen/caer/modules/dsnn/layers.h
 
-/home/dongchen/Documents/caer/modules/dsnn/learn.h
+/home/dongchen/caer/modules/dsnn/learn.h
 
-/home/dongchen/Documents/caer/modules/dsnn/learn_column.h
+/home/dongchen/caer/modules/dsnn/learn_column.h
 
-/home/dongchen/Documents/caer/modules/dsnn/learn_nsm.h
+/home/dongchen/caer/modules/dsnn/learn_nsm.h
 
-/home/dongchen/Documents/caer/modules/dsnn/load_save.h
+/home/dongchen/caer/modules/dsnn/load_save.h
 
-/home/dongchen/Documents/caer/modules/dsnn/record.h
+/home/dongchen/caer/modules/dsnn/record.h
 
-/home/dongchen/Documents/caer/modules/dsnn/reset.h
+/home/dongchen/caer/modules/dsnn/reset.h
 
-/home/dongchen/Documents/caer/modules/dsnn/scale_up_down.h
+/home/dongchen/caer/modules/dsnn/scale_up_down.h
 
-/home/dongchen/Documents/caer/modules/dsnn/stability.h
+/home/dongchen/caer/modules/dsnn/stability.h
 
-/home/dongchen/Documents/caer/modules/dsnn/synapse.h
+/home/dongchen/caer/modules/dsnn/synapse.h
 
-/home/dongchen/Documents/caer/modules/dsnn/update.h
+/home/dongchen/caer/modules/dsnn/update.h
 
 base/mainloop.h
 main.h

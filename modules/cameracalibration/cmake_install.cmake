@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/Documents/caer/modules/cameracalibration
+# Install script for directory: /home/dongchen/caer/modules/cameracalibration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

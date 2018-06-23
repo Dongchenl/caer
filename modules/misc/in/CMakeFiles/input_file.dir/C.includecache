@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/Documents/caer/modules/misc/in/file.c
+/home/dongchen/caer/modules/misc/in/file.c
 main.h
-/home/dongchen/Documents/caer/modules/misc/in/main.h
+/home/dongchen/caer/modules/misc/in/main.h
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/misc/in/base/mainloop.h
+/home/dongchen/caer/modules/misc/in/base/mainloop.h
 base/module.h
-/home/dongchen/Documents/caer/modules/misc/in/base/module.h
+/home/dongchen/caer/modules/misc/in/base/module.h
 input_common.h
-/home/dongchen/Documents/caer/modules/misc/in/input_common.h
+/home/dongchen/caer/modules/misc/in/input_common.h
 ext/pathmax.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/pathmax.h
+/home/dongchen/caer/modules/misc/in/ext/pathmax.h
 sys/types.h
 -
 fcntl.h
 -
 
-/home/dongchen/Documents/caer/modules/misc/in/input_common.c
+/home/dongchen/caer/modules/misc/in/input_common.c
 input_common.h
-/home/dongchen/Documents/caer/modules/misc/in/input_common.h
+/home/dongchen/caer/modules/misc/in/input_common.h
 base/mainloop.h
-/home/dongchen/Documents/caer/modules/misc/in/base/mainloop.h
+/home/dongchen/caer/modules/misc/in/base/mainloop.h
 ext/portable_time.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/portable_time.h
+/home/dongchen/caer/modules/misc/in/ext/portable_time.h
 ext/uthash/utlist.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/uthash/utlist.h
+/home/dongchen/caer/modules/misc/in/ext/uthash/utlist.h
 ext/nets.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/nets.h
+/home/dongchen/caer/modules/misc/in/ext/nets.h
 png.h
 -
 stdatomic.h
@@ -50,21 +50,21 @@ libcaer/events/frame.h
 libcaer/devices/dynapse.h
 -
 
-/home/dongchen/Documents/caer/modules/misc/in/input_common.h
+/home/dongchen/caer/modules/misc/in/input_common.h
 base/module.h
-/home/dongchen/Documents/caer/modules/misc/in/base/module.h
+/home/dongchen/caer/modules/misc/in/base/module.h
 modules/misc/inout_common.h
-/home/dongchen/Documents/caer/modules/misc/in/modules/misc/inout_common.h
+/home/dongchen/caer/modules/misc/in/modules/misc/inout_common.h
 ext/buffers.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/buffers.h
+/home/dongchen/caer/modules/misc/in/ext/buffers.h
 ext/uthash/utarray.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/uthash/utarray.h
+/home/dongchen/caer/modules/misc/in/ext/uthash/utarray.h
 libcaer/ringbuffer.h
 -
 unistd.h
 -
 ext/c11threads_posix.h
-/home/dongchen/Documents/caer/modules/misc/in/ext/c11threads_posix.h
+/home/dongchen/caer/modules/misc/in/ext/c11threads_posix.h
 
 base/mainloop.h
 main.h

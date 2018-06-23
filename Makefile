@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dongchen/Documents/caer
+CMAKE_SOURCE_DIR = /home/dongchen/caer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dongchen/Documents/caer
+CMAKE_BINARY_DIR = /home/dongchen/caer
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,9 +124,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/Documents/caer/CMakeFiles /home/dongchen/Documents/caer/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/caer/CMakeFiles /home/dongchen/caer/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/Documents/caer/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/caer/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -492,45 +492,6 @@ caer-ctl/fast:
 	$(MAKE) -f utils/caerctl/CMakeFiles/caer-ctl.dir/build.make utils/caerctl/CMakeFiles/caer-ctl.dir/build
 .PHONY : caer-ctl/fast
 
-#=============================================================================
-# Target rules for targets named tcpststat
-
-# Build rule for target.
-tcpststat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tcpststat
-.PHONY : tcpststat
-
-# fast build rule for target.
-tcpststat/fast:
-	$(MAKE) -f utils/tcpststat/CMakeFiles/tcpststat.dir/build.make utils/tcpststat/CMakeFiles/tcpststat.dir/build
-.PHONY : tcpststat/fast
-
-#=============================================================================
-# Target rules for targets named udpststat
-
-# Build rule for target.
-udpststat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 udpststat
-.PHONY : udpststat
-
-# fast build rule for target.
-udpststat/fast:
-	$(MAKE) -f utils/udpststat/CMakeFiles/udpststat.dir/build.make utils/udpststat/CMakeFiles/udpststat.dir/build
-.PHONY : udpststat/fast
-
-#=============================================================================
-# Target rules for targets named unixststat
-
-# Build rule for target.
-unixststat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 unixststat
-.PHONY : unixststat
-
-# fast build rule for target.
-unixststat/fast:
-	$(MAKE) -f utils/unixststat/CMakeFiles/unixststat.dir/build.make utils/unixststat/CMakeFiles/unixststat.dir/build
-.PHONY : unixststat/fast
-
 base/config.o: base/config.cpp.o
 
 .PHONY : base/config.o
@@ -839,9 +800,6 @@ help:
 	@echo "... localfiltdownsample"
 	@echo "... dsnn"
 	@echo "... caer-ctl"
-	@echo "... tcpststat"
-	@echo "... udpststat"
-	@echo "... unixststat"
 	@echo "... base/config.o"
 	@echo "... base/config.i"
 	@echo "... base/config.s"
