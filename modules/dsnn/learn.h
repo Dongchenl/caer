@@ -19,15 +19,10 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 		set_first_ts = 1;
 	}
 	if (ini_finished == 0) {
-//		if (ts - first_ts < 1000 * 1000 * 110) { //110s //120s //150s //200s
-////			printf("%d, %d \n", ts, first_ts);
-//			return;
-//		} else
 		if (ts - first_ts >= 1000 * 1000 * 110) {
 			ini_finished = 1;
 			printf("Ready to learn. \n");
 			filtered_input_ready = 1;
-//			post_spike_time = ts;
 		} else {
 			spike_not_considered = 1;
 		}
@@ -49,20 +44,17 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 		return;
 	}
 	uint32_t neuron_id = caerSpikeEventGetNeuronID(caerSpikeIteratorElement);
-//	uint32_t row_id = (uint32_t) (neuron_id / 16);
+	uint32_t row_id = (uint32_t) (neuron_id / 16);
 	uint32_t col_id = neuron_id % 16;
 	uint32_t core_id = caerSpikeEventGetSourceCoreID(caerSpikeIteratorElement);
 
-	//	chip ID: 2, core ID: 1, neuron ID: 105.
-	if (chip_id == 3 && core_id == 1 && neuron_id == 105) { //(core_id == 0 || core_id == 1)
+	if (chip_id == 3 && core_id == 1 && neuron_id == 105) { //malfunction neuron
 		spike_not_considered = 1;
 	}
 	int32_t random_number = rand() % 100;
 	if (random_number > 20) { //10
 		spike_not_considered = 1;
 	}
-//	if (chip_id == 3)
-//		printf("ts: %d \n", (int) ts);
 
 	//record spikes from the input layer
 	if (spike_not_considered == 0) {
@@ -170,7 +162,6 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 				}
 				if (delta_time > CONSIDERING_PERIOD) {
 					updateConfiguration(moduleData);
-	//				printf("Update. Number of spikes: %d \n", (int) spike_num);
 					end_searching = 1;
 					last_update_time = post_spike_time;
 					filtered_input_ready = 0;
@@ -196,63 +187,43 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 		if (filtered_input_ready == 1 && micro_saccade_finished == 0) {
 
 			int64_t spike_addr = chip_id << NEURON_CHIPID_SHIFT | core_id << NEURON_COREID_SHIFT | neuron_id;
-	//		printf("chip_id: %d \n", (int) chip_id);
 			if (chip_id == 3) {
 				memory.spike_fifo_output->buffer2d[memory.wr_pointer_output][0] = spike_addr;
 				memory.spike_fifo_output->buffer2d[memory.wr_pointer_output][1] = ts;
 				memory.wr_pointer_output = (memory.wr_pointer_output + 1) % SPIKE_QUEUE_LENGTH;
 
-//				printf("a: %d %d \n", (int) ts, (int) first_ts_output);
-				if (set_first_ts_output == 0) { //this part maybe not necessary!!!!!
+				if (set_first_ts_output == 0) { //not necessary
 					first_ts_output = ts;
 					set_first_ts_output = 1;
 				}
 				if (ini_finished_output == 0) {
-	//				if ((float) (ts - first_ts_output) / 1000 < CONSIDERING_PERIOD_CHECK) {
-	////					printf("b: %d %d \n", (int) ts, (int) first_ts_output);
-	//					return;
-	//				} else
-					if ((float) (ts - first_ts_output) / 1000 >= CONSIDERING_PERIOD_CHECK) {
+					if ((float) (ts - first_ts_output) / 1000 >= CONSIDERING_PERIOD_CHECK * 4) {
 						ini_finished_output = 1;
 						printf("Ready to learn on the output neurons. \n");
-//						printf("c: %d %d \n", (int) ts, (int) first_ts_output);
 					}
 				}
-				if ((float) (ts - first_ts_output) / 1000 > CONSIDERING_PERIOD_CHECK * 20) { // * 2
-//					printf("d: %d %d \n", (int) ts, (int) first_ts_output);
-					shiftNsmWinner(moduleData, nsm_winner_neuron_id);
+				if ((float) (ts - first_ts_output) / 1000 > CONSIDERING_PERIOD_CHECK * 20) {
 					applyNotReadySignal(moduleData);
 					updateConfiguration(moduleData);
 					micro_saccade_finished = 1;
 					printf("The learning is finished. \n");
-	//				return; //no return!!!!! otherwise lost events
+//					return; //No return. Otherwise lose the rest of the events in the package.
 				}
 			}
 
+			//write the ring buffer for the learning on NSMs
+			if ((chip_id == 1 && core_id == 1 && row_id < 2 && col_id <= 7) ||
+				(chip_id == 1 && core_id == 3 && row_id >= NSM_SIZE / 2 * 4 && row_id < NSM_SIZE / 2 * 4 + 2 && col_id <= 7)) {
+				memory.spike_fifo_nsm->buffer2d[memory.wr_pointer_nsm][0] = spike_addr;
+				memory.spike_fifo_nsm->buffer2d[memory.wr_pointer_nsm][1] = ts;
+				memory.wr_pointer_nsm = (memory.wr_pointer_nsm + 1) % SPIKE_QUEUE_LENGTH;
+			}
+
+			//perform the learning on output neurons
 			if ((chip_id == 1 && (core_id == 0 || core_id == 2)) && ini_finished_output == 1 && micro_saccade_finished == 0) {
 
-//				int32_t new_nsm_winner_neuron_id;
-//				if (core_id == 0 && col_id < 8)
-//					new_nsm_winner_neuron_id = 0;
-//				else if (core_id == 0 && col_id >= 8)
-//					new_nsm_winner_neuron_id = 1;
-//				else if (core_id == 2 && col_id < 8)
-//					new_nsm_winner_neuron_id = 2;
-//				else if (core_id == 2 && col_id >= 8)
-//					new_nsm_winner_neuron_id = 3;
-
-
 				int32_t learned_post_neuron = memory.learned_post_synaptic_neuron->buffer2d[spike_addr - MEMORY_NEURON_ADDR_OFFSET][0];
-				if (learned_post_neuron == 0) { //new_nsm_winner_neuron_id == nsm_winner_neuron_id &&
-
-					if (core_id == 0 && col_id < 8)
-						nsm_winner_neuron_id = 0;
-					else if (core_id == 0 && col_id >= 8)
-						nsm_winner_neuron_id = 1;
-					else if (core_id == 2 && col_id < 8)
-						nsm_winner_neuron_id = 2;
-					else if (core_id == 2 && col_id >= 8)
-						nsm_winner_neuron_id = 3;
+				if (learned_post_neuron == 0) {
 
 					memory.learned_post_synaptic_neuron->buffer2d[spike_addr - MEMORY_NEURON_ADDR_OFFSET][0] = 1;
 					int64_t start_spike_time = ts;
@@ -268,23 +239,56 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 						current_spike_addr = memory.spike_fifo_output->buffer2d[current_rd_pointer][0];
 						current_spike_time = memory.spike_fifo_output->buffer2d[current_rd_pointer][1];
 						delta_time = (float) (start_spike_time - current_spike_time) / 1000;
-						if (delta_time > 0 && delta_time <= CONSIDERING_PERIOD_CHECK) {
-		//					printf("1. \n");
-							spike_num += 1;
-							learnColumnUpdate(current_spike_addr, spike_addr);
-						}
-						if (delta_time > CONSIDERING_PERIOD_CHECK) {
-//							int32_t random_number_learn = rand() % 100;
-//							if (random_number_learn > 90) { //10
-//								learnColumnConfigure(moduleData, spike_addr);
-//							}
-							learnColumnConfigure(moduleData, spike_addr);
-	//						printf("Update. Number of spikes: %d \n", (int) spike_num); //~490 spikes
-							end_searching = 1;
-						}
 						if (current_spike_addr == 0) {
-	//						printf("2. \n");
 							end_searching = 1;
+						}
+						if (end_searching == 0) {
+							if (delta_time > 0 && delta_time <= CONSIDERING_PERIOD_CHECK) {
+								spike_num += 1;
+								learnColumnUpdate(current_spike_addr, spike_addr);
+							}
+							else if (delta_time > CONSIDERING_PERIOD_CHECK) {
+								learnColumnConfigure(moduleData, spike_addr);
+								end_searching = 1;
+							}
+						}
+					}
+				}
+			}
+
+			//perform the learning on NSMs
+			if ((chip_id == 1 && core_id == 1 && row_id < 2 && col_id <= 7) &&
+				ini_finished_output == 1 && micro_saccade_finished == 0) {
+
+				int32_t learned_post_neuron = memory.learned_post_synaptic_neuron->buffer2d[spike_addr - MEMORY_NEURON_ADDR_OFFSET][0];
+				if (learned_post_neuron == 0) {
+
+					memory.learned_post_synaptic_neuron->buffer2d[spike_addr - MEMORY_NEURON_ADDR_OFFSET][0] = 1;
+					int64_t start_spike_time = ts;
+					int64_t current_spike_addr, current_spike_time;
+					float delta_time;
+
+					int64_t spike_num = 0;
+					memory.start_rd_pointer_nsm = memory.wr_pointer_nsm;
+					uint8_t end_searching = 0;
+					for (uint64_t current_rd_pointer = (memory.start_rd_pointer_nsm - 1) % SPIKE_QUEUE_LENGTH;
+						end_searching != 1;
+						current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {
+						current_spike_addr = memory.spike_fifo_nsm->buffer2d[current_rd_pointer][0];
+						current_spike_time = memory.spike_fifo_nsm->buffer2d[current_rd_pointer][1];
+						delta_time = (float) (start_spike_time - current_spike_time) / 1000;
+						if (current_spike_addr == 0) {
+							end_searching = 1;
+						}
+						if (end_searching == 0) {
+							if (delta_time > 0 && delta_time <= CONSIDERING_PERIOD_CHECK) {
+								spike_num += 1;
+								learnNSMUpdate(current_spike_addr, spike_addr);
+							}
+							else if (delta_time > CONSIDERING_PERIOD_CHECK) {
+								learnNSMConfigure(moduleData, spike_addr);
+								end_searching = 1;
+							}
 						}
 					}
 				}
@@ -294,7 +298,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 
 	CAER_SPIKE_ITERATOR_VALID_END
 
-	if (learned_object_num == TRAINING_OBJECT_NUM) { //first ++, then == inside a < block, useful for denoting the end
+	if (learned_object_num == TRAINING_OBJECT_NUM) { //useful for denoting the end of learning
 		printf("The training is finished. \n");
 		saveConnectivity();
 	}

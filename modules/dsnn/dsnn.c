@@ -9,6 +9,7 @@
 #include "scale_up_down.h"
 #include "create_nsm.h"
 #include "learn_column.h"
+#include "learn_nsm.h"
 #include "stability.h"
 #include "load_save.h"
 #include "learn.h"

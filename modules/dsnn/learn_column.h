@@ -2,7 +2,6 @@ static void learnColumnUpdate(int64_t nsm_winner_neuron_id, int64_t feature_neur
 static void learnColumnConfigure(caerModuleData moduleData, int64_t nsm_winner_neuron_id);
 static void removeNotReadySignal(caerModuleData moduleData);
 static void applyNotReadySignal(caerModuleData moduleData);
-static void shiftNsmWinner(caerModuleData moduleData, int64_t nsm_winner_neuron_id);
 
 void learnColumnUpdate(int64_t feature_neuron_address, int64_t output_neuron_address) {
 	int64_t pre_neuron_addr = feature_neuron_address;
@@ -93,7 +92,7 @@ void learnColumnConfigure(caerModuleData moduleData, int64_t output_neuron_addre
 			}
 		}
 	}
-	printf("@@@@ Learned %d EX synapses, %d IN synapses. \n", num_ex, num_in);
+//	printf("@@@@ Learned %d EX synapses, %d IN synapses. \n", num_ex, num_in);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U0);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U1);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U2);
@@ -156,34 +155,6 @@ void applyNotReadySignal(caerModuleData moduleData) {
 		}
 		not_ready_added = 1;
 	}
-	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U0);
-	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U1);
-	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U2);
-	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U3);
-}
-
-void shiftNsmWinner(caerModuleData moduleData, int64_t nsm_winner_neuron_id) {
-	int64_t pre_neuron_id, post_neuron_id;
-	uint32_t pre_neuron_addr, post_neuron_addr;
-	int32_t cam_id, synapse_type;
-	int8_t updated = 0;
-	for (pre_neuron_id = 0; pre_neuron_id < NSM_SIZE; pre_neuron_id++) {
-		for (post_neuron_id = 0; post_neuron_id < NSM_SIZE; post_neuron_id++) {
-			pre_neuron_addr = nsm_transition_1[0][nsm_winner_neuron_id][pre_neuron_id];
-			post_neuron_addr = nsm_state_0[0][nsm_winner_neuron_id][post_neuron_id];
-
-			cam_id = memory.synapse_map_cam_no->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET];
-			synapse_type = 0;
-			if (synapse_type != memory.synapse_map_type->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET]) {
-				writeCamDSNN(moduleData, (uint32_t) pre_neuron_addr, (uint32_t) post_neuron_addr, 0, (uint32_t) cam_id,
-					synapse_type, 0, 0);
-				memory.synapse_map_type->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = synapse_type;
-				updated= 1;
-			}
-		}
-	}
-	if (updated == 1)
-		printf("The winner %d is shifted. \n", (int) nsm_winner_neuron_id);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U0);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U1);
 	configureChipDSNN(moduleData, DYNAPSE_CONFIG_DYNAPSE_U2);
