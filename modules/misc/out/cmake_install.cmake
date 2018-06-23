@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/caer/modules/misc/out
+# Install script for directory: /home/dongchen/Documents/caer/modules/misc/out
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,12 +47,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/misc/out/caer_output_file.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/misc/out/caer_output_file.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_output_file.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_output_file.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_output_file.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_output_file.so")
@@ -75,12 +75,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/misc/out/caer_output_net_tcp_server.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/misc/out/caer_output_net_tcp_server.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_server.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_server.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_server.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_server.so")
@@ -103,12 +103,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/misc/out/caer_output_net_tcp_client.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/misc/out/caer_output_net_tcp_client.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_client.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_client.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_client.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_tcp_client.so")
@@ -131,12 +131,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/misc/out/caer_output_net_udp.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/misc/out/caer_output_net_udp.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_udp.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_udp.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_udp.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_udp.so")
@@ -159,12 +159,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/misc/out/caer_output_net_socket_server.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/misc/out/caer_output_net_socket_server.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_server.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_server.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_server.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_server.so")
@@ -187,12 +187,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/misc/out/caer_output_net_socket_client.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/misc/out/caer_output_net_socket_client.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_client.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_client.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_client.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_output_net_socket_client.so")

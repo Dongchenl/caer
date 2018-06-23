@@ -1,4 +1,4 @@
-# Install script for directory: /home/dongchen/caer/modules/ini
+# Install script for directory: /home/dongchen/Documents/caer/modules/ini
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,12 +47,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/ini/caer_dvs128.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/ini/caer_dvs128.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_dvs128.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_dvs128.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_dvs128.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_dvs128.so")
@@ -75,12 +75,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/ini/caer_edvs.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/ini/caer_edvs.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_edvs.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_edvs.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_edvs.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_edvs.so")
@@ -103,12 +103,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/ini/caer_davis.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/ini/caer_davis.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_davis.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_davis.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_davis.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_davis.so")
@@ -131,12 +131,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/caer/modules/ini/caer_dynapse.so")
+file(INSTALL DESTINATION "/usr/local/share/caer" TYPE SHARED_LIBRARY FILES "/home/dongchen/Documents/caer/modules/ini/caer_dynapse.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/share/caer/caer_dynapse.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/share/caer/caer_dynapse.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/usr/local/share/caer/caer_dynapse.so"
-         OLD_RPATH "/home/dongchen/caer:"
+         OLD_RPATH "/home/dongchen/Documents/caer:"
          NEW_RPATH "/usr/local/bin")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/share/caer/caer_dynapse.so")

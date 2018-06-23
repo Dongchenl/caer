@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/caer/modules/ini/dynapse.c
+/home/dongchen/Documents/caer/modules/ini/dynapse.c
 main.h
-/home/dongchen/caer/modules/ini/main.h
+/home/dongchen/Documents/caer/modules/ini/main.h
 base/mainloop.h
-/home/dongchen/caer/modules/ini/base/mainloop.h
+/home/dongchen/Documents/caer/modules/ini/base/mainloop.h
 base/module.h
-/home/dongchen/caer/modules/ini/base/module.h
+/home/dongchen/Documents/caer/modules/ini/base/module.h
 libcaer/events/packetContainer.h
 -
 libcaer/events/special.h
@@ -22,11 +22,11 @@ libcaer/events/spike.h
 libcaer/devices/dynapse.h
 -
 dynapse_utils.h
-/home/dongchen/caer/modules/ini/dynapse_utils.h
+/home/dongchen/Documents/caer/modules/ini/dynapse_utils.h
 
-/home/dongchen/caer/modules/ini/dynapse_utils.h
+/home/dongchen/Documents/caer/modules/ini/dynapse_utils.h
 main.h
-/home/dongchen/caer/modules/ini/main.h
+/home/dongchen/Documents/caer/modules/ini/main.h
 libcaer/devices/dynapse.h
 -
 

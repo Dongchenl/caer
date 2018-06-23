@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/dongchen/caer/modules/frameenhancer/frameenhancer.c
+/home/dongchen/Documents/caer/modules/frameenhancer/frameenhancer.c
 main.h
-/home/dongchen/caer/modules/frameenhancer/main.h
+/home/dongchen/Documents/caer/modules/frameenhancer/main.h
 base/mainloop.h
-/home/dongchen/caer/modules/frameenhancer/base/mainloop.h
+/home/dongchen/Documents/caer/modules/frameenhancer/base/mainloop.h
 base/module.h
-/home/dongchen/caer/modules/frameenhancer/base/module.h
+/home/dongchen/Documents/caer/modules/frameenhancer/base/module.h
 libcaer/events/frame.h
 -
 libcaer/frame_utils.h
