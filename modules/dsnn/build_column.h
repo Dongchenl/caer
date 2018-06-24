@@ -29,7 +29,7 @@ void connectColumnSynapses4Learning(caerModuleData moduleData) {
 	uint32_t pre_neuron_addr, post_neuron_addr;
 	int8_t virtual_neuron_addr_enable = 0;
 	uint32_t virtual_neuron_addr = 0;
-	int8_t real_virtual_synapse = VIRTUAL_SYNAPSE_WITHOUT_SRAM;
+	int8_t real_virtual_synapse = VIRTUAL_SYNAPSE; //VIRTUAL_SYNAPSE_WITHOUT_SRAM
 	//for the first scale
 	for (post_row_id = 0; post_row_id < COLUMN_X_0_EI_L; post_row_id++) {
 		for (post_col_id = 0; post_col_id < COLUMN_X_0_EI_W; post_col_id++) {

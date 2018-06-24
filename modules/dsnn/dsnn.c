@@ -35,9 +35,6 @@
 
 #include <unistd.h>
 
-double deltaWeights[DELTA_WEIGHT_LUT_LENGTH];
-double synapseUpgradeThreshold[SYNAPSE_UPGRADE_THRESHOLD_LUT_LENGTH];
-
 static bool caerDSNNInit(caerModuleData moduleData);
 static void caerDSNNRun(caerModuleData moduleData, caerEventPacketContainer in, caerEventPacketContainer *out);
 static void caerDSNNConfig(caerModuleData moduleData);
