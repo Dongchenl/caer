@@ -25,6 +25,9 @@ bool resetNetworkDSNN(caerModuleData moduleData) {
 	//Initializes random number generator
 	srand(1);
 
+	resetBiasesDSNN(moduleData);
+	applyNotReadySignal(moduleData);
+
 	if (load_previous_connectivity == 0) {
 		createLayers();
 		buildInputLayer01(moduleData);
@@ -47,8 +50,6 @@ bool resetNetworkDSNN(caerModuleData moduleData) {
 		createColumnPopulations();
 		setOutputToOtherChips(moduleData);
 	}
-
-	resetBiasesDSNN(moduleData);
 
 	if (davis_input == 1) {
 		setDavisInput(moduleData);

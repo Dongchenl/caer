@@ -1,7 +1,7 @@
 #ifndef NSMFILTER_H_
 #define NSMFILTER_H_
 
-#define LOAD_PREVIOUS_CONNECTIVITY 0 //0: start a new learning; 1: load learned connectivity
+#define LOAD_PREVIOUS_CONNECTIVITY 1 //0: start a new learning; 1: load learned connectivity
 #define DAVIS_INPUT 1 //1: receive input events from DAVIS
 #define ENABLE_OUTPUT_TO_ROLLS 0 //1: send output events to ROLLS
 #define RECORD_OUTPUT_EVENTS 0 //1: record the events of the input/output layer into a file
