@@ -1,10 +1,10 @@
 #ifndef NSMFILTER_H_
 #define NSMFILTER_H_
 
-#define LOAD_PREVIOUS_CONNECTIVITY 0 //1
-#define DAVIS_INPUT 1
-#define ENABLE_OUTPUT_TO_ROLLS 0
-#define RECORD_OUTPUT_EVENTS 0
+#define LOAD_PREVIOUS_CONNECTIVITY 0 //0: start a new learning; 1: load learned connectivity
+#define DAVIS_INPUT 1 //1: receive input events from DAVIS
+#define ENABLE_OUTPUT_TO_ROLLS 0 //1: send output events to ROLLS
+#define RECORD_OUTPUT_EVENTS 0 //1: record the events of the input/output layer into a file
 
 #define CONNECTIVITY_NUM 50000
 #define PATTERN_PERIOD_TESTING 2
@@ -26,32 +26,21 @@
 
 #define CONSIDERED_SPIKES_THRESHOULD 80
 #define NUM_SPIKES_THRESHOULD 2
-/************************************************************/
-//not important
-#define CHECK_STABILITY_PERIOD (1000 * 5)
 
- //500 //50 //10 //50
+#define CHECK_STABILITY_PERIOD (1000 * 5) //not important
+
 #define CONSIDERED_SPIKES_THRESHOULD_CHECK 0
 #define NUM_SPIKES_THRESHOULD_CHECK 5
-/************************************************************/
+
 
 #define SPIKE_REDUCED_NUM 4 //40
 
 #define WEIGHT_THRESHOULD 0 //2 //40
 
-#define LEARNED_PIXELS_THRESHOLD 16 //* 2 //*2
+#define LEARNED_PIXELS_THRESHOLD 16 //*2 //*2
 #define FEATURE_NEURONS_NUM_THRESHOLD 8 //* 2
 
 #define NSM_WINNER_SPIKES_NUM_THRESHOULD 10
-
-//for constructing layers
-#define NON_LEARNING_LAYER0_N 256
-#define LEARNING_LAYER0_N 256
-#define NON_LEARNING_LAYER1_N 256
-#define LEARNING_LAYER1_N 256
-#define NON_LEARNING_LAYER2_N 256
-#define LEARNING_LAYER2_N 64
-#define NON_LEARNING_LAYER3_N 8
 
 //for learning algorithm
 #define EX_IN_BALANCE_THRESHOLD_L 0
@@ -65,21 +54,8 @@
 #define USB_PACKET_MAXIMUM_SIZE_INITIALIZATION 1024 //1366
 #define USB_PACKET_MAXIMUM_SIZE_LEARNING 1024 //1366
 
-//period for learning
-#define PREPARE_EVENTS_PERIOD 10
-#define PREPARE_ARRAY_PERIOD 10
-
 //parameter determined by the main loop
 #define EVENTSOURCEID 1
-
-//for visualizer
-#define VMIN 0
-#define VMAX 20
-#define WHITE_EDGE_COLOR_VALUE 0.5f
-
-//loop-up table parameters for synapse weight updating
-#define DELTA_WEIGHT_LUT_LENGTH 80
-#define SYNAPSE_UPGRADE_THRESHOLD_LUT_LENGTH 128
 
 //spike queue parameters
 #define SPIKE_QUEUE_LENGTH 10000000
@@ -92,7 +68,7 @@
 #define MAXIMUM_CONSIDERED_SPIKE_NUM 100000
 #define MINIMUM_CONSIDERED_SPIKE_NUM 100
 
-//memory offset for neuron addresses
+//memory offset for neuron addresses because the chip ID starts from 1
 #define MEMORY_NEURON_ADDR_OFFSET 1024
 
 //chip parameters
@@ -154,9 +130,6 @@
 #define COLUMN_X_3_EI_L 7
 #define COLUMN_X_3_EI_W 7
 
-#define OUTPUT_LAYER_EI_L 16
-#define OUTPUT_LAYER_EI_W 16
-
 #define COLUMN_OUTPUT_EI_L 4
 #define COLUMN_OUTPUT_EI_W 4
 
@@ -164,7 +137,7 @@
 #define OUTPUT_POPULATION_EI_W 4
 #define OUTPUT_POPULATION_EI_SIZE 4
 
-#define NSM_L 1 //for a single state
+#define NSM_L 1
 #define NSM_W 4
 #define NSM_SIZE 4
 
@@ -262,7 +235,7 @@
 #include "main.h"
 
 #include <libcaer/events/spike.h>
-#include <libcaer/events/frame.h> //for display
+#include <libcaer/events/frame.h> //for the display
 
 void caerDSNN(uint16_t moduleID, caerSpikeEventPacket spike);
 
