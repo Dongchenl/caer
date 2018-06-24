@@ -141,6 +141,9 @@
 #define NSM_W 4
 #define NSM_SIZE 4
 
+#define MOTOR_L 2
+#define MOTOR_W 2
+
 //memory size
 #define CAM_MAP_SIZE_WIDTH 1
 #define POST_NEURON_ACTIVITY_SIZE_WIDTH 1
