@@ -26,7 +26,6 @@ bool resetNetworkDSNN(caerModuleData moduleData) {
 	srand(1);
 
 	resetBiasesDSNN(moduleData);
-	applyNotReadySignal(moduleData);
 
 	if (load_previous_connectivity == 0) {
 		createLayers();

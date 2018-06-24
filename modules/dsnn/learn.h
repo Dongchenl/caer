@@ -21,6 +21,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 	if (ini_finished == 0) {
 		if (ts - first_ts >= 1000 * 1000 * 110) {
 			ini_finished = 1;
+			applyNotReadySignal(moduleData);
 			printf("Ready to learn. \n");
 			filtered_input_ready = 1;
 		} else {
@@ -197,7 +198,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 					set_first_ts_output = 1;
 				}
 				if (ini_finished_output == 0) {
-					if ((float) (ts - first_ts_output) / 1000 >= CONSIDERING_PERIOD_CHECK * 4) {
+					if ((float) (ts - first_ts_output) / 1000 >= CONSIDERING_PERIOD_CHECK * 8) { //4
 						ini_finished_output = 1;
 						printf("Ready to learn on the output neurons. \n");
 					}

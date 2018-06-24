@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dongchen/caer
+CMAKE_SOURCE_DIR = /home/dongchen/dynapse/caer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dongchen/caer
+CMAKE_BINARY_DIR = /home/dongchen/dynapse/caer
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dongchen/caer && $(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/caer/CMakeFiles /home/dongchen/caer/modules/dsnn/CMakeFiles/progress.marks
-	cd /home/dongchen/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/caer/CMakeFiles 0
+	cd /home/dongchen/dynapse/caer && $(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/dynapse/caer/CMakeFiles /home/dongchen/dynapse/caer/modules/dsnn/CMakeFiles/progress.marks
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dongchen/dynapse/caer/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dongchen/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/clean
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dongchen/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/preinstall
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dongchen/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/preinstall
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dongchen/caer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dongchen/dynapse/caer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 modules/dsnn/CMakeFiles/dsnn.dir/rule:
-	cd /home/dongchen/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/CMakeFiles/dsnn.dir/rule
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f CMakeFiles/Makefile2 modules/dsnn/CMakeFiles/dsnn.dir/rule
 .PHONY : modules/dsnn/CMakeFiles/dsnn.dir/rule
 
 # Convenience name for target.
@@ -166,7 +166,7 @@ dsnn: modules/dsnn/CMakeFiles/dsnn.dir/rule
 
 # fast build rule for target.
 dsnn/fast:
-	cd /home/dongchen/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/build
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/build
 .PHONY : dsnn/fast
 
 dsnn.o: dsnn.c.o
@@ -175,7 +175,7 @@ dsnn.o: dsnn.c.o
 
 # target to build an object file
 dsnn.c.o:
-	cd /home/dongchen/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.o
 .PHONY : dsnn.c.o
 
 dsnn.i: dsnn.c.i
@@ -184,7 +184,7 @@ dsnn.i: dsnn.c.i
 
 # target to preprocess a source file
 dsnn.c.i:
-	cd /home/dongchen/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.i
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.i
 .PHONY : dsnn.c.i
 
 dsnn.s: dsnn.c.s
@@ -193,7 +193,7 @@ dsnn.s: dsnn.c.s
 
 # target to generate assembly for a file
 dsnn.c.s:
-	cd /home/dongchen/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.s
+	cd /home/dongchen/dynapse/caer && $(MAKE) -f modules/dsnn/CMakeFiles/dsnn.dir/build.make modules/dsnn/CMakeFiles/dsnn.dir/dsnn.c.s
 .PHONY : dsnn.c.s
 
 # Help Target
@@ -223,6 +223,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dongchen/caer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dongchen/dynapse/caer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
