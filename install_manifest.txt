@@ -3,5 +3,6 @@
 /usr/local/share/caer/caer_edvs.so
 /usr/local/share/caer/caer_davis.so
 /usr/local/share/caer/caer_dynapse.so
+/usr/local/share/caer/caer_statistics.so
 /usr/local/share/caer/caer_visualizer.so
 /usr/local/bin/caer-ctl

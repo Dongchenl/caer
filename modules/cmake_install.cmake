@@ -35,6 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/dongchen/caer/modules/ini/cmake_install.cmake")
+  include("/home/dongchen/caer/modules/statistics/cmake_install.cmake")
   include("/home/dongchen/caer/modules/visualizer/cmake_install.cmake")
   include("/home/dongchen/caer/modules/localfiltdownsample/cmake_install.cmake")
   include("/home/dongchen/caer/modules/dsnn/cmake_install.cmake")

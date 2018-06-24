@@ -220,6 +220,19 @@ edvs/fast:
 .PHONY : edvs/fast
 
 #=============================================================================
+# Target rules for targets named statistics
+
+# Build rule for target.
+statistics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 statistics
+.PHONY : statistics
+
+# fast build rule for target.
+statistics/fast:
+	$(MAKE) -f modules/statistics/CMakeFiles/statistics.dir/build.make modules/statistics/CMakeFiles/statistics.dir/build
+.PHONY : statistics/fast
+
+#=============================================================================
 # Target rules for targets named visualizer
 
 # Build rule for target.
@@ -558,6 +571,7 @@ help:
 	@echo "... davis"
 	@echo "... dynapse"
 	@echo "... edvs"
+	@echo "... statistics"
 	@echo "... visualizer"
 	@echo "... localfiltdownsample"
 	@echo "... dsnn"

@@ -29,27 +29,18 @@ void recordOutputEvents(caerSpikeEventPacketConst spike) {
 			fclose(f);
 			char buf_1[0x100];
 			snprintf(buf_1, sizeof(buf_1), "recorded_events/recorded_events_%d_%d.txt", trial_id, testing_object_id);
-//			f = fopen(buf_1, "a");
-//			if (f == NULL)
-//			{
-//			    printf("Error opening file! \n");
-//			    exit(1);
-//			}
 			printf("The No. %d recording for object %d starts. \n", trial_id, testing_object_id);
 		}
 	}
 
 	if (testing_pause == 1) {
-//		testing_pause = 0;
 		printf("Please enter c to continue the recording for object %d. \n", testing_object_id);
 		scanf("%c", &letter);
 		if (letter == 'c') {
 			testing_pause = 0;
 			char buf_0[0x100];
 			snprintf(buf_0, sizeof(buf_0), "recorded_events/recorded_events_%d_%d.txt", trial_id, testing_object_id);
-			printf(buf_0);
 			f = fopen(buf_0, "w");
-//			f = fopen("recorded_events/recorded_events_9_9.txt", "a");
 			if (f == NULL)
 			{
 			    printf("Error opening file! \n");
@@ -59,9 +50,7 @@ void recordOutputEvents(caerSpikeEventPacketConst spike) {
 			fclose(f);
 			char buf_1[0x100];
 			snprintf(buf_1, sizeof(buf_1), "recorded_events/recorded_events_%d_%d.txt", trial_id, testing_object_id);
-			printf(buf_1);
 			f = fopen(buf_1, "a");
-//			f = fopen("recorded_events/recorded_events_9_9.txt", "a");
 			if (f == NULL)
 			{
 			    printf("Error opening file! \n");
@@ -78,7 +67,7 @@ void recordOutputEvents(caerSpikeEventPacketConst spike) {
 		return;
 	}
 
-	if (ts - recording_first_ts < 5000 * 1000) { //3000 * 1000
+	if (ts - recording_first_ts < 5000 * 1000) {
 		return;
 	}
 
@@ -118,13 +107,12 @@ void recordOutputEvents(caerSpikeEventPacketConst spike) {
 		    exit(1);
 		}
 
-		f = fopen("recorded_events/recorded_events_0_0.txt", "a");
+		f = fopen("recorded_events/recorded_events.txt", "a");
 		fprintf(f, "%d %d %d %d %d \n", (int) ts, (int) neuron_id, (int) core_id, (int) chip_id, (int) object_id);
 		fclose(f);
-//		printf("Written! \n");
 
 		recognized_object_num += 1;
-		if (recognized_object_num == -1) { //MAXIMUM_RECORDED_EVENTS_PER_OBJECT
+		if (recognized_object_num == -1) {
 			fclose(f);
 			printf("The No. %d recording for object %d is finished. \n", trial_id, testing_object_id);
 			recognized_object_num = 0;
@@ -134,7 +122,6 @@ void recordOutputEvents(caerSpikeEventPacketConst spike) {
 				testing_object_id = 0;
 				trial_id += 1;
 			}
-//			recording_set_first_ts = 0;
 			recording_first_ts = ts;
 			return;
 		}

@@ -27,8 +27,6 @@ uint32_t feature_layer_2_in[FEATURE_LAYER_EI_L][FEATURE_LAYER_EI_W]; //off cells
 uint32_t feature_layer_3_ex[FEATURE_LAYER_EI_L][FEATURE_LAYER_EI_W]; //on cells
 uint32_t feature_layer_3_in[FEATURE_LAYER_EI_L][FEATURE_LAYER_EI_W]; //off cells
 
-uint32_t output_layer_ex[OUTPUT_LAYER_EI_L][OUTPUT_LAYER_EI_W];
-
 void createLayers() {
 	int64_t row_id, col_id;
 	uint32_t chip_id, encoded_neuron_address;
@@ -123,15 +121,6 @@ void createLayers() {
 			feature_layer_3_in[row_id][col_id] = encoded_neuron_address;
 		}
 	}
-	//output layer
-	for (row_id = 0; row_id < OUTPUT_LAYER_EI_L; row_id++) {
-		for (col_id = 0; col_id < OUTPUT_LAYER_EI_W; col_id++) {
-			chip_id = CHIP_UP_LEFT_ID;
-			encoded_neuron_address = encodeNeuronAddress4Chip(chip_id, row_id + TOTAL_NEURON_NUM_ON_CORE_X, col_id + TOTAL_NEURON_NUM_ON_CORE_Y);
-			output_layer_ex[row_id][col_id] = encoded_neuron_address;
-		}
-	}
-
 }
 
 void buildInputLayer01(caerModuleData moduleData) {
@@ -180,39 +169,6 @@ void buildInputLayer01(caerModuleData moduleData) {
 				for (pre_col_id = 0; pre_col_id < FEATURE_LAYER_EI_W; pre_col_id++) {
 					if (pre_row_id == FEATURE_LAYER_EI_L-1 && pre_col_id == FEATURE_LAYER_EI_W-1) { //
 						pre_neuron_addr = feature_layer_0_in[pre_row_id][pre_col_id]; //input_layer_0_in
-						real_virtual_synapse = VIRTUAL_SYNAPSE; //REAL_SYNAPSE_WITHOUT_LEARNING; //VIRTUAL_SYNAPSE;
-						buildSynapseDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr,
-							FAST_EX_SYNAPSE_VALUE, real_virtual_synapse, virtual_neuron_addr_enable, FIRST_CAM_ID);
-					}
-				}
-			}
-		}
-	}
-
-	for (post_row_id = 0; post_row_id < OUTPUT_LAYER_EI_L; post_row_id++) {
-		for (post_col_id = 0; post_col_id < OUTPUT_LAYER_EI_W; post_col_id++) {
-			post_neuron_addr = output_layer_ex[post_row_id][post_col_id];
-			for (pre_row_id = 0; pre_row_id < FEATURE_LAYER_EI_L; pre_row_id++) {
-				for (pre_col_id = 0; pre_col_id < FEATURE_LAYER_EI_W; pre_col_id++) {
-					if (pre_row_id == FEATURE_LAYER_EI_L-1 && pre_col_id == FEATURE_LAYER_EI_W-1 &&
-						post_row_id == OUTPUT_LAYER_EI_L-1 && post_col_id == OUTPUT_LAYER_EI_W-1) { //
-						pre_neuron_addr = feature_layer_0_in[pre_row_id][pre_col_id]; //input_layer_0_in[0][0];
-						real_virtual_synapse = VIRTUAL_SYNAPSE; //REAL_SYNAPSE_WITHOUT_LEARNING; //VIRTUAL_SYNAPSE;
-						buildSynapseDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr,
-							FAST_EX_SYNAPSE_VALUE, real_virtual_synapse, virtual_neuron_addr_enable, FIRST_CAM_ID);
-					}
-				}
-			}
-		}
-	}
-	for (post_row_id = 0; post_row_id < OUTPUT_LAYER_EI_L; post_row_id++) {
-		for (post_col_id = 0; post_col_id < OUTPUT_LAYER_EI_W; post_col_id++) {
-			post_neuron_addr = output_layer_ex[post_row_id][post_col_id];
-			for (pre_row_id = 0; pre_row_id < FEATURE_LAYER_EI_L; pre_row_id++) {
-				for (pre_col_id = 0; pre_col_id < FEATURE_LAYER_EI_W; pre_col_id++) {
-					if (pre_row_id == FEATURE_LAYER_EI_L-1 && pre_col_id == FEATURE_LAYER_EI_W-1 &&
-						post_row_id == OUTPUT_LAYER_EI_L-1 && post_col_id == OUTPUT_LAYER_EI_W-2) { //
-						pre_neuron_addr = feature_layer_0_in[pre_row_id][pre_col_id]; //input_layer_0_in[0][0];
 						real_virtual_synapse = VIRTUAL_SYNAPSE; //REAL_SYNAPSE_WITHOUT_LEARNING; //VIRTUAL_SYNAPSE;
 						buildSynapseDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr,
 							FAST_EX_SYNAPSE_VALUE, real_virtual_synapse, virtual_neuron_addr_enable, FIRST_CAM_ID);

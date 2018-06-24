@@ -3,7 +3,6 @@
 #include "ext/buffers.h"
 #include "libcaer/devices/dynapse.h"
 #include "modules/ini/dynapse_utils.h"
-//#include "libcaercpp/devices/davis.hpp"
 #include <math.h>
 #include <stdio.h>
 #include <time.h>
@@ -107,8 +106,6 @@ static int num_config_chip_U1 = 0;
 static int num_config_chip_U2 = 0;
 static int num_config_chip_U3 = 0;
 
-static int64_t learned_pixels_above_threshold = 0;
-
 static int8_t filtered_input_ready = 1;
 
 static int usb_packet_maximum_size = USB_PACKET_MAXIMUM_SIZE_INITIALIZATION;
@@ -124,7 +121,6 @@ static uint64_t last_wr_pointer = 0;
 
 static int8_t not_ready_added = 1;
 
-static int32_t nsm_winner_neuron_id;
 static int32_t micro_saccade_finished = 1;
 
 static int8_t output_neuron_firing = 1;
@@ -240,14 +236,7 @@ void initializeMemory(void) {
 
 	memory.learned_post_synaptic_neuron = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) 1);
 }
-/*
-int binary_conversion(int64_t num) {
-    if (num == 0)
-        return (0);
-    else
-        return (((int)num % 2) + 10 * binary_conversion(num / 2));
-}
-*/
+
 int64_t max(int64_t num1, int64_t num2) {
     return ((num1 > num2 ) ? num1 : num2);
 }
