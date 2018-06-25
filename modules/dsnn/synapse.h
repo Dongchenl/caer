@@ -268,8 +268,10 @@ void buildSynapseDSNN(caerModuleData moduleData, uint32_t pre_neuron_addr, uint3
 			}
 		}
 		if (availableCamFound == 1) {
-			if (real_or_virtual_synapse != VIRTUAL_SYNAPSE && real_or_virtual_synapse != VIRTUAL_SYNAPSE_WITHOUT_SRAM) {
-				writeCamDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr, cam_id, synapse_type, virtual_neuron_addr_enable, 0);
+			if (real_or_virtual_synapse != VIRTUAL_SYNAPSE &&
+				real_or_virtual_synapse != VIRTUAL_SYNAPSE_WITHOUT_SRAM) {
+				if (real_or_virtual_synapse != REAL_SYNAPSE_WITHOUT_CAM_CONNECTED)
+					writeCamDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr, cam_id, synapse_type, virtual_neuron_addr_enable, 0);
 				memory.cam_map->buffer2d[post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][cam_id] = 1;
 			}
 			if (virtual_neuron_addr_enable == 0)
@@ -282,7 +284,7 @@ void buildSynapseDSNN(caerModuleData moduleData, uint32_t pre_neuron_addr, uint3
 		}
 	}
 	//memories for the chip
-	if (real_or_virtual_synapse == REAL_SYNAPSE) {
+	if (real_or_virtual_synapse == REAL_SYNAPSE || real_or_virtual_synapse == REAL_SYNAPSE_WITHOUT_CAM_CONNECTED) {
 		memory.connection_map->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = 1;
 		if (synapse_type > 0)
 			memory.connection_map_ei->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = 1;
@@ -297,7 +299,7 @@ void buildSynapseDSNN(caerModuleData moduleData, uint32_t pre_neuron_addr, uint3
 			memory.connection_map_ei->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = 1;
 		memory.synapse_map_sram_no->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = (int32_t) sram_id;
 	}
-	if (real_or_virtual_synapse == REAL_SYNAPSE) {
+	if (real_or_virtual_synapse == REAL_SYNAPSE || real_or_virtual_synapse == REAL_SYNAPSE_WITHOUT_CAM_CONNECTED) {
 		memory.synapse_map_type->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] = synapse_type;
 	}
 	if (virtual_neuron_addr_enable == 1) {

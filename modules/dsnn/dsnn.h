@@ -100,6 +100,7 @@
 #define EXTERNAL_REAL_SYNAPSE 2
 #define REAL_SYNAPSE_WITHOUT_LEARNING 3
 #define VIRTUAL_SYNAPSE_WITHOUT_SRAM 4
+#define REAL_SYNAPSE_WITHOUT_CAM_CONNECTED 5
 
 //chip & core ID in standard neuron address format
 #define VIRTUAL_CHIP_ID 0
@@ -143,6 +144,12 @@
 
 #define MOTOR_L 2
 #define MOTOR_W 2
+
+#define ARBITRATION_L 2
+#define ARBITRATION_W 2
+
+#define LEARNING_L 2
+#define LEARNING_W 2
 
 //memory size
 #define CAM_MAP_SIZE_WIDTH 1

@@ -66,13 +66,6 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 			memory.spike_fifo->buffer2d[memory.wr_pointer][1] = ts; //put spike address into the queue
 			memory.wr_pointer = (memory.wr_pointer + 1) % SPIKE_QUEUE_LENGTH;
 		}
-		//record spikes from the output layer
-		if (chip_id == 1 && (core_id == 0 || core_id == 2)) {
-			int64_t spike_addr = chip_id << NEURON_CHIPID_SHIFT | core_id << NEURON_COREID_SHIFT | neuron_id;
-			memory.spike_fifo_output_firing_check->buffer2d[memory.wr_pointer_output_firing_check][0] = spike_addr; //put spike address into the queue
-			memory.spike_fifo_output_firing_check->buffer2d[memory.wr_pointer_output_firing_check][1] = ts; //put spike address into the queue
-			memory.wr_pointer_output_firing_check = (memory.wr_pointer_output_firing_check + 1) % SPIKE_QUEUE_LENGTH;
-		}
 
 		//Check the silence
 		int8_t spike_valid = 0;
@@ -115,35 +108,13 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 				synapse_updated = 0;
 				post_spike_time = ts; //update the memory of time-stamp
 				last_spike_num = 0;
-				memory.start_rd_pointer_output_firing_check = memory.wr_pointer_output_firing_check;
-				end_searching = 0;
-				for (uint64_t current_rd_pointer = (memory.start_rd_pointer_output_firing_check - 1) % SPIKE_QUEUE_LENGTH;
-					end_searching != 1;
-					current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {
-					current_spike_addr = memory.spike_fifo_output_firing_check->buffer2d[current_rd_pointer][0];
-					current_spike_time = memory.spike_fifo_output_firing_check->buffer2d[current_rd_pointer][1];
-					delta_time = (float) (start_spike_time - current_spike_time) / 1000;
-					if (delta_time > 0 && delta_time <= OUPUT_NEURON_FIRING_CHECK_PERIOD) {
-						end_searching = 1;
-						output_neuron_firing = 1;
-					}
-					if (delta_time > OUPUT_NEURON_FIRING_CHECK_PERIOD) {
-						end_searching = 1;
-						output_neuron_firing = 0;
-					}
-					if (current_spike_addr == 0) {
-						end_searching = 1;
-						output_neuron_firing = 0;
-					}
-				}
 			}
 		}
 
 		//start the input pattern learning after a period of silence
 		if ((ts - post_spike_time > REFRACTORY_PERIOD) && //REFRACTORY_PERIOD * 1000
 			synapse_updated == 0 &&
-			spike_valid == 1 &&
-			output_neuron_firing == 0) {
+			spike_valid == 1) {
 			synapse_updated = 1;
 			memory.start_rd_pointer = last_wr_pointer;
 			int64_t start_spike_time = post_spike_time;
