@@ -21,7 +21,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 	if (ini_finished == 0) {
 		if (ts - first_ts >= 1000 * 1000 * 110) {
 			ini_finished = 1;
-			applyNotReadySignal(moduleData);
+			applyMotorSignal(moduleData);
 			printf("Ready to learn. \n");
 			filtered_input_ready = 1;
 		} else {
@@ -102,7 +102,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 			}
 			else if (spike_num < last_spike_num - SPIKE_REDUCED_NUM) {
 				//if the spike number is decreased
-				applyNotReadySignal(moduleData);
+				applyMotorSignal(moduleData);
 				synapse_updated = 0;
 				post_spike_time = ts; //update the memory of time-stamp
 				last_spike_num = 0;
@@ -144,7 +144,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 
 		//check the stability of the input patterns
 		if (ts - last_update_time > CHECK_STABILITY_PERIOD * 1000 && filtered_input_ready == 0) {
-			removeNotReadySignal(moduleData); //stop the simulated motor signal
+			removeMotorSignal(moduleData); //stop the simulated motor signal
 			micro_saccade_finished = 0;
 			filtered_input_ready = 1;
 			set_first_ts_output = 0;
@@ -172,7 +172,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 					}
 				}
 				if ((float) (ts - first_ts_output) / 1000 > CONSIDERING_PERIOD_CHECK * 20) {
-					applyNotReadySignal(moduleData);
+					applyMotorSignal(moduleData);
 					updateConfiguration(moduleData);
 					micro_saccade_finished = 1;
 					printf("The learning is finished. \n");

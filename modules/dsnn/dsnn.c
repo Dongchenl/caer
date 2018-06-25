@@ -10,7 +10,7 @@
 #include "build_column.h"
 #include "learn_column.h"
 #include "learn_nsm.h"
-#include "stability.h"
+#include "motor.h"
 #include "load_save.h"
 #include "learn.h"
 #include "biases.h"
