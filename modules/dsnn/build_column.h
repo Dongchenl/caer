@@ -915,18 +915,18 @@ void connectOutput2Output(caerModuleData moduleData) {
 		}
 	}
 
-	//connect output to arbitration neurons
+	//connect output to hub neurons
 //	virtual_neuron_addr_enable = 1;
 	for (pre_row_id = 0; pre_row_id < OUTPUT_POPULATION_EI_L; pre_row_id++) {
 		for (pre_col_id = 0; pre_col_id < OUTPUT_POPULATION_EI_W; pre_col_id++) {
 			for (pre_neuron_id = 0; pre_neuron_id < OUTPUT_POPULATION_EI_SIZE; pre_neuron_id++) {
-				for (post_row_id = 0; post_row_id < ARBITRATION_L; post_row_id++) {
-					for (post_col_id = 0; post_col_id < ARBITRATION_W; post_col_id++) {
+				for (post_row_id = 0; post_row_id < HUB_L; post_row_id++) {
+					for (post_col_id = 0; post_col_id < HUB_W; post_col_id++) {
 						pre_neuron_addr = output_population_ex[pre_row_id][pre_col_id][pre_neuron_id];
 //						pre_chip_id = (pre_neuron_addr & NEURON_CHIPID_BITS) >> NEURON_CHIPID_SHIFT;
 //						pre_neuron_id = (pre_neuron_addr & NEURON_NEURONID_BITS) >> NEURON_NEURONID_SHIFT;
 //						virtual_neuron_addr = pre_chip_id << NEURON_CHIPID_SHIFT | 2 << NEURON_COREID_SHIFT | pre_neuron_id;
-						post_neuron_addr = arbitration_neurons[post_row_id][post_col_id];
+						post_neuron_addr = hub_neurons[post_row_id][post_col_id];
 						buildSynapseDSNN(moduleData, pre_neuron_addr, post_neuron_addr, virtual_neuron_addr,
 							FAST_EX_SYNAPSE_VALUE, real_virtual_synapse, virtual_neuron_addr_enable, FIRST_CAM_ID);
 					}

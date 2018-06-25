@@ -73,11 +73,9 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 			//calculate the number of spikes in a period
 			spike_valid = 1;
 			memory.start_rd_pointer = memory.wr_pointer;
-			int64_t start_spike_time = ts;
-			int64_t current_spike_addr, current_spike_time;
-			float delta_time;
+			start_spike_time = ts;
 			int64_t spike_num = 0;
-			uint8_t end_searching = 0;
+			end_searching = 0;
 			for (uint64_t current_rd_pointer = (memory.start_rd_pointer - 1) % SPIKE_QUEUE_LENGTH;
 				end_searching != 1;
 				current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {
@@ -117,11 +115,9 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 			spike_valid == 1) {
 			synapse_updated = 1;
 			memory.start_rd_pointer = last_wr_pointer;
-			int64_t start_spike_time = post_spike_time;
-			int64_t current_spike_addr, current_spike_time;
-			float delta_time;
+			start_spike_time = post_spike_time;
 			int64_t spike_num = 0;
-			uint8_t end_searching = 0;
+			end_searching = 0;
 			for (uint64_t current_rd_pointer = (memory.start_rd_pointer - 1) % SPIKE_QUEUE_LENGTH;
 				end_searching != 1;
 				current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {
@@ -133,6 +129,7 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 					updateMemory(current_spike_addr);
 				}
 				if (delta_time > CONSIDERING_PERIOD) {
+//					deleteOne2OneConection(moduleData);
 					updateConfiguration(moduleData);
 					end_searching = 1;
 					last_update_time = post_spike_time;
@@ -146,17 +143,57 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 			}
 		}
 
+//		if (chip_id == 1 && core_id == 1 && row_id >= 14 && col_id >= 14) {
+//			int64_t spike_addr = chip_id << NEURON_CHIPID_SHIFT | core_id << NEURON_COREID_SHIFT | neuron_id;
+//			memory.spike_fifo_output_firing_check->buffer2d[memory.wr_pointer_output_firing_check][0] = spike_addr; //put spike address into the queue
+//			memory.spike_fifo_output_firing_check->buffer2d[memory.wr_pointer_output_firing_check][1] = ts; //put spike address into the queue
+//			memory.wr_pointer_output_firing_check = (memory.wr_pointer_output_firing_check + 1) % SPIKE_QUEUE_LENGTH;
+//		}
+
 		//check the stability of the input patterns
 		if (ts - last_update_time > CHECK_STABILITY_PERIOD * 1000 && filtered_input_ready == 0) {
+			//stop the simulated motor signal
 			removeNotReadySignal(moduleData);
+			//the delay of learning pathway
+//			memory.start_rd_pointer_output_firing_check = last_wr_pointer;
+//			start_spike_time = ts;
+//			end_searching = 0;
+//			uint8_t output_neuron_firing = 0;
+//			for (uint64_t current_rd_pointer = (memory.start_rd_pointer_output_firing_check - 1) % SPIKE_QUEUE_LENGTH;
+//				end_searching != 1;
+//				current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {
+//				current_spike_addr = memory.spike_fifo_output_firing_check->buffer2d[current_rd_pointer][0];
+//				current_spike_time = memory.spike_fifo_output_firing_check->buffer2d[current_rd_pointer][1];
+//				delta_time = (float) (start_spike_time - current_spike_time) / 1000;
+//				if (delta_time > 0 && delta_time <= OUPUT_NEURON_FIRING_CHECK_PERIOD) {
+//					end_searching = 1;
+//					output_neuron_firing = 1;
+//				}
+//				if (delta_time > OUPUT_NEURON_FIRING_CHECK_PERIOD) {
+//					end_searching = 1;
+//					output_neuron_firing = 0;
+//				}
+//				if (current_spike_addr == 0) {
+//					end_searching = 1;
+//					output_neuron_firing = 0;
+//				}
+//			}
+//			if (output_neuron_firing == 0) {
+//				applyLearningPathwaySignal(moduleData);
+//			}
 			micro_saccade_finished = 0;
 			filtered_input_ready = 1;
 			set_first_ts_output = 0;
 			ini_finished_output = 0;
 		}
 
+//		//the delay of learning pathway
+//		if (micro_saccade_finished == 0) {
+//
+//		}
+
 		//learn the connectivity
-		if (filtered_input_ready == 1 && micro_saccade_finished == 0) {
+		if (micro_saccade_finished == 0) {
 
 			int64_t spike_addr = chip_id << NEURON_CHIPID_SHIFT | core_id << NEURON_COREID_SHIFT | neuron_id;
 			if (chip_id == 3) {
@@ -176,7 +213,9 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 				}
 				if ((float) (ts - first_ts_output) / 1000 > CONSIDERING_PERIOD_CHECK * 20) {
 					applyNotReadySignal(moduleData);
+//					removeLearningPathwaySignal(moduleData);
 					updateConfiguration(moduleData);
+//					restoreOne2OneConection(moduleData);
 					micro_saccade_finished = 1;
 					printf("The learning is finished. \n");
 					learned_object_num += 1;
@@ -199,13 +238,11 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 				if (learned_post_neuron == 0) {
 
 					memory.learned_post_synaptic_neuron->buffer2d[spike_addr - MEMORY_NEURON_ADDR_OFFSET][0] = 1;
-					int64_t start_spike_time = ts;
-					int64_t current_spike_addr, current_spike_time;
-					float delta_time;
+					start_spike_time = ts;
 
 					int64_t spike_num = 0;
 					memory.start_rd_pointer_output = memory.wr_pointer_output;
-					uint8_t end_searching = 0;
+					end_searching = 0;
 					for (uint64_t current_rd_pointer = (memory.start_rd_pointer_output - 1) % SPIKE_QUEUE_LENGTH;
 						end_searching != 1;
 						current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {
@@ -237,13 +274,10 @@ void learning(caerModuleData moduleData, caerSpikeEventPacketConst spike) {
 				if (learned_post_neuron == 0) {
 
 					memory.learned_post_synaptic_neuron->buffer2d[spike_addr - MEMORY_NEURON_ADDR_OFFSET][0] = 1;
-					int64_t start_spike_time = ts;
-					int64_t current_spike_addr, current_spike_time;
-					float delta_time;
-
+					start_spike_time = ts;
 					int64_t spike_num = 0;
 					memory.start_rd_pointer_nsm = memory.wr_pointer_nsm;
-					uint8_t end_searching = 0;
+					end_searching = 0;
 					for (uint64_t current_rd_pointer = (memory.start_rd_pointer_nsm - 1) % SPIKE_QUEUE_LENGTH;
 						end_searching != 1;
 						current_rd_pointer = (current_rd_pointer - 1) % SPIKE_QUEUE_LENGTH) {

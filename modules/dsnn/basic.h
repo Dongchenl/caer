@@ -69,6 +69,10 @@ struct DSNN_memory {
 	uint64_t start_rd_pointer_output;
 	uint64_t wr_pointer_output;
 
+//	simple2DBufferLong spike_fifo_output_firing_check;
+//	uint64_t start_rd_pointer_output_firing_check;
+//	uint64_t wr_pointer_output_firing_check;
+
 	//learning algorithm
 	uint64_t package_spike_counter;
 	uint64_t pre_rd_pointer_old;
@@ -108,6 +112,11 @@ static uint64_t last_wr_pointer = 0;
 static int8_t not_ready_added = 1;
 
 static int32_t micro_saccade_finished = 1;
+
+static int64_t start_spike_time;
+static int64_t current_spike_addr, current_spike_time;
+static float delta_time;
+static uint8_t end_searching = 0;
 
 //static int8_t output_neuron_firing = 1;
 
@@ -184,6 +193,8 @@ void initializeMemory(void) {
 	memory.spike_fifo_nsm = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
 	//third spike queue
 	memory.spike_fifo_output = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
+	//fourth spike queue
+//	memory.spike_fifo_output_firing_check = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
 
 	//connection between neurons
 	memory.connection_map = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) TOTAL_NEURON_NUM_ON_BOARD);

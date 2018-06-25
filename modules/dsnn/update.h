@@ -18,7 +18,6 @@ void updateMemory(int64_t post_neuron_addr) {
 		if (memory.connection_map_ei->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] == 1)
 			memory.delta_weight_map_ex->buffer2d[pre_neuron_addr - MEMORY_NEURON_ADDR_OFFSET][post_neuron_addr - MEMORY_NEURON_ADDR_OFFSET] += 1;
 	}
-
 }
 
 void updateConfiguration(caerModuleData moduleData) {

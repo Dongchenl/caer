@@ -145,11 +145,14 @@
 #define MOTOR_L 2
 #define MOTOR_W 2
 
-#define ARBITRATION_L 2
-#define ARBITRATION_W 2
+#define HUB_L 2
+#define HUB_W 2
 
 #define LEARNING_L 2
 #define LEARNING_W 2
+
+#define ARBITRATION_L 2
+#define ARBITRATION_W 2
 
 //memory size
 #define CAM_MAP_SIZE_WIDTH 1
