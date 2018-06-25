@@ -37,7 +37,7 @@ struct DSNN_memory {
 	simple2DBufferInt synapse_map_cam_no;
 	simple2DBufferInt synapse_map_sram_no;
 	simple2DBufferInt post_neuron_activity_record;
-	simple2DBufferInt post_neuron_taken_record; //Problem of the chip: inhibition is not strong enough
+	simple2DBufferInt post_neuron_taken_record; //for efficient learning
 	simple2DBufferInt learned_post_synaptic_neuron;
 
 	//for saving connectivity
@@ -48,7 +48,6 @@ struct DSNN_memory {
 	//CAM memory
 	simple2DBufferInt cam_map;
 	simple2DBufferInt cam_map_source_id;
-//	simple2DBufferInt cam_map_size;
 
 	//SRAM memory
 	simple2DBufferInt sram_map;
@@ -68,10 +67,6 @@ struct DSNN_memory {
 	simple2DBufferLong spike_fifo_output;
 	uint64_t start_rd_pointer_output;
 	uint64_t wr_pointer_output;
-
-//	simple2DBufferLong spike_fifo_output_firing_check;
-//	uint64_t start_rd_pointer_output_firing_check;
-//	uint64_t wr_pointer_output_firing_check;
 
 	//learning algorithm
 	uint64_t package_spike_counter;
@@ -100,10 +95,6 @@ static int8_t filtered_input_ready = 1;
 
 static int usb_packet_maximum_size = USB_PACKET_MAXIMUM_SIZE_INITIALIZATION;
 
-//static int8_t nsm_winner_ready = 0;
-//static int64_t nsm_winner_id = 255;
-//static int64_t nsm_winner_spikes_num = 0;
-
 static int64_t learned_object_num = 0;
 
 static int64_t last_spike_num = 0;
@@ -118,9 +109,8 @@ static int64_t current_spike_addr, current_spike_time;
 static float delta_time;
 static uint8_t end_searching = 0;
 
-//static int8_t output_neuron_firing = 1;
+static uint8_t learned_object_num_updated = 0;
 
-//static int64_t spike_num = 0;
 
 static void setBiasBitsDSNN(caerModuleData moduleData, uint32_t chip_id, uint32_t core_id, const char *biasName,
 	uint8_t coarseValue, uint16_t fineValue, const char *lowHigh, const char *npBias);
@@ -193,8 +183,6 @@ void initializeMemory(void) {
 	memory.spike_fifo_nsm = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
 	//third spike queue
 	memory.spike_fifo_output = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
-	//fourth spike queue
-//	memory.spike_fifo_output_firing_check = simple2DBufferInitLong((size_t) SPIKE_QUEUE_LENGTH, (size_t) SPIKE_QUEUE_WIDTH);
 
 	//connection between neurons
 	memory.connection_map = simple2DBufferInitInt((size_t) TOTAL_NEURON_NUM_ON_BOARD, (size_t) TOTAL_NEURON_NUM_ON_BOARD);
