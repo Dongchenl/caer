@@ -20,10 +20,12 @@ uint32_t nsm_transition_1[NSM_L][NSM_W][NSM_SIZE];
 
 uint32_t output_selecting_neurons[NSM_L][NSM_W][NSM_SIZE];
 
-uint32_t motor_neurons[MOTOR_L][MOTOR_W];
-uint32_t hub_neurons[HUB_L][HUB_W];
-uint32_t learning_neurons[LEARNING_L][LEARNING_W];
-uint32_t arbitration_neurons[ARBITRATION_L][ARBITRATION_W];
+//for the arbitration mechanism
+uint32_t motor_neurons_ex[MOTOR_L][MOTOR_W];
+uint32_t motor_neurons_in[MOTOR_L][MOTOR_W];
+uint32_t learning_pathway_neurons[LEARNING_L][LEARNING_W];
+uint32_t arbitration_neurons_ex[ARBITRATION_L][ARBITRATION_W];
+uint32_t arbitration_neurons_in[ARBITRATION_L][ARBITRATION_W];
 
 void createNSMPopulations(void) {
 	int64_t row_id, col_id;
@@ -177,7 +179,20 @@ void createNSMPopulations(void) {
 			}
 		}
 	}
-	//motor neurons
+	//learning neurons
+	for (row_id = 0; row_id < LEARNING_L; row_id++) {
+		for (col_id = 0; col_id < LEARNING_W; col_id++) {
+			chip_id = CHIP_UP_LEFT_ID;
+			core_id = CORE_UP_RIGHT_ID;
+			reference_row_id = 10;
+			reference_col_id = 14; //14;
+			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
+				reference_row_id, reference_col_id,
+				row_id, col_id);
+			learning_pathway_neurons[row_id][col_id] = encoded_neuron_address;
+		}
+	}
+	//motor neurons EX
 	for (row_id = 0; row_id < MOTOR_L; row_id++) {
 		for (col_id = 0; col_id < MOTOR_W; col_id++) {
 			chip_id = CHIP_UP_LEFT_ID;
@@ -187,38 +202,12 @@ void createNSMPopulations(void) {
 			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
 				reference_row_id, reference_col_id,
 				row_id, col_id);
-			motor_neurons[row_id][col_id] = encoded_neuron_address;
+			motor_neurons_ex[row_id][col_id] = encoded_neuron_address;
 		}
 	}
-	//hub neurons
-	for (row_id = 0; row_id < HUB_L; row_id++) {
-		for (col_id = 0; col_id < HUB_W; col_id++) {
-			chip_id = CHIP_UP_LEFT_ID;
-			core_id = CORE_UP_RIGHT_ID;
-			reference_row_id = 14;
-			reference_col_id = 14; //14;
-			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
-				reference_row_id, reference_col_id,
-				row_id, col_id);
-			hub_neurons[row_id][col_id] = encoded_neuron_address;
-		}
-	}
-	//learning neurons
-	for (row_id = 0; row_id < LEARNING_L; row_id++) {
-		for (col_id = 0; col_id < LEARNING_W; col_id++) {
-			chip_id = CHIP_UP_LEFT_ID;
-			core_id = CORE_UP_RIGHT_ID;
-			reference_row_id = 14;
-			reference_col_id = 12; //14;
-			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
-				reference_row_id, reference_col_id,
-				row_id, col_id);
-			learning_neurons[row_id][col_id] = encoded_neuron_address;
-		}
-	}
-	//arbitration neurons
-	for (row_id = 0; row_id < ARBITRATION_L; row_id++) {
-		for (col_id = 0; col_id < ARBITRATION_W; col_id++) {
+	//motor neurons IN
+	for (row_id = 0; row_id < MOTOR_L; row_id++) {
+		for (col_id = 0; col_id < MOTOR_W; col_id++) {
 			chip_id = CHIP_UP_LEFT_ID;
 			core_id = CORE_UP_RIGHT_ID;
 			reference_row_id = 12;
@@ -226,7 +215,33 @@ void createNSMPopulations(void) {
 			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
 				reference_row_id, reference_col_id,
 				row_id, col_id);
-			arbitration_neurons[row_id][col_id] = encoded_neuron_address;
+			motor_neurons_in[row_id][col_id] = encoded_neuron_address;
+		}
+	}
+	//arbitration neurons EX
+	for (row_id = 0; row_id < ARBITRATION_L; row_id++) {
+		for (col_id = 0; col_id < ARBITRATION_W; col_id++) {
+			chip_id = CHIP_UP_LEFT_ID;
+			core_id = CORE_UP_RIGHT_ID;
+			reference_row_id = 14;
+			reference_col_id = 12; //14;
+			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
+				reference_row_id, reference_col_id,
+				row_id, col_id);
+			arbitration_neurons_ex[row_id][col_id] = encoded_neuron_address;
+		}
+	}
+	//arbitration neurons IN
+	for (row_id = 0; row_id < ARBITRATION_L; row_id++) {
+		for (col_id = 0; col_id < ARBITRATION_W; col_id++) {
+			chip_id = CHIP_UP_LEFT_ID;
+			core_id = CORE_UP_RIGHT_ID;
+			reference_row_id = 14;
+			reference_col_id = 14; //14;
+			encoded_neuron_address = encodeNeuronAddress(chip_id, core_id,
+				reference_row_id, reference_col_id,
+				row_id, col_id);
+			arbitration_neurons_in[row_id][col_id] = encoded_neuron_address;
 		}
 	}
 }

@@ -80,6 +80,12 @@ uint32_t getWriteSramBitsDSNN(uint32_t pre_neuron_addr, uint32_t chip_core_id, u
 		sy = EVENT_DIRECTION_Y_UP;
 		dy = 2;
 	}
+	if (source_chipId == 2 && destination_chipId == 3) {
+		sx = 0;
+		dx = 0;
+		sy = EVENT_DIRECTION_Y_UP;
+		dy = 2;
+	}
 	if (source_chipId == 0 && destination_chipId == 3) {
 		sx = 0;
 		dx = 0;
