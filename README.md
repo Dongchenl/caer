@@ -27,7 +27,7 @@ biases.h | Configure the biases of the analog neuron and synapse circuits on the
 encode_neuron.h | Encode the address of silicon neurons.
 synapse.h | Build physical synapses on neuromorphic hardware. 
 initialize.h | Initialize the network. 
-connect_davis.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
+connect_retina.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
 load_save.h | Load and save the learned synapse weights. 
 record.h | Record the neural activity on the chips. 
 
