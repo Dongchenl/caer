@@ -51,7 +51,7 @@ build_ouput.h | Connect the feature neurons to the output neurons.
 build_wta.h | Connect the NSMs to form the WTA mechanism. 
 build_arbitrator.h | Connect the neurons for arbitration. 
 
-Perform the learning algorithm. <br /> 
+Perform the learning rules. <br /> 
 
 File Name | Main Usage
 ------------ | -------------
@@ -62,13 +62,12 @@ learn_wta.h | Learn the synapse weight between feature neurons and the output ne
 motor.h | Simulate the events sent from motor neurons. 
 learn.h | Control the writing and reading of the ring buffer. 
 
-Overall control of the computing and configuring. <br />
+Overall control of configuring the chips and the computing in the 'dsnn' module. <br />
 
 File Name | Main Usage
 ------------ | -------------
 dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
-
 
 # Usage
 
