@@ -49,7 +49,7 @@ build_input.h | Connect the input neurons.
 build_feature.h | Connect the feature neurons. 
 build_ouput.h | Connect the feature neurons to the output neurons. 
 build_wta.h | Connect the NSMs to form the WTA mechanism. 
-build_arbitrator.h | Connect the neurons for arbitration. 
+build_arbitrator.h | Connect the neurons for the arbitration. 
 
 Perform the learning rules. <br /> 
 
