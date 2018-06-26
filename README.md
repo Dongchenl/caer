@@ -20,8 +20,8 @@ encode_neuron.h | Encode the address of silicon neurons.
 synapse.h | Build physical synapses on neuromorphic hardware. 
 layers.h | Build feature neurons. 
 update.h | Update the synapse weights in memory and update them on neuromorphic hardware. 
-create_column.h | Create multiple groups of output neurons. 
-build_column.h | Connect the feature neurons to output neurons. 
+create_output.h | Create multiple groups of output neurons. 
+build_output.h | Connect the feature neurons to output neurons. 
 scale_up_down.h | Simulate the mapping neurons of the recognition network. 
 create_nsm.h | Create the neural state machines to build the winner-take-all mechanism. 
 learn_column.h | Learn the synapse weight between feature neurons and the output neurons. 
