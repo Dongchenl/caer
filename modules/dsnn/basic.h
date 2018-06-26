@@ -112,6 +112,33 @@ static uint8_t end_searching = 0;
 static uint8_t learned_object_num_updated = 0;
 
 
+static int8_t set_first_ts = 0;
+static int8_t ini_finished = 0;
+static int64_t first_ts;
+static int64_t recording_first_ts;
+
+static int8_t set_first_ts_output = 0;
+static int8_t ini_finished_output = 0;
+static int64_t first_ts_output;
+
+static int64_t post_spike_time = 0;
+
+
+static int8_t load_previous_connectivity = LOAD_PREVIOUS_CONNECTIVITY;
+static int8_t record_output_events = RECORD_OUTPUT_EVENTS;
+static FILE *f;
+static char letter;
+static int32_t testing_object_id = 0;
+static int64_t recognized_object_num = 0;
+static int8_t testing_pause = 0;
+static int32_t trial_id = 0;
+static int8_t davis_input = DAVIS_INPUT;
+static int8_t enable_output_to_rolls = ENABLE_OUTPUT_TO_ROLLS;
+
+//for overall control of learning and testing
+static int8_t network_reseted = 0;
+
+
 static void setBiasBitsDSNN(caerModuleData moduleData, uint32_t chip_id, uint32_t core_id, const char *biasName,
 	uint8_t coarseValue, uint16_t fineValue, const char *lowHigh, const char *npBias);
 static uint32_t getWriteCamSramChipIdDSNN(uint32_t neuron_addr);

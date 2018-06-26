@@ -45,7 +45,7 @@ void loadConnectivity(caerModuleData moduleData) {
 	    	memory.sram_map_content->buffer2d[pre_neuron_addr-MEMORY_NEURON_ADDR_OFFSET][sram_id] = chip_core_id;
 		}
 
-		FILE *f = fopen("saved_connectivity_check.txt", "w");
+		f = fopen("saved_connectivity_check.txt", "w");
 		if (f == NULL)
 		{
 		    printf("Error opening file!\n");
@@ -114,7 +114,7 @@ void loadConnectivity(caerModuleData moduleData) {
 }
 
 void saveConnectivity() {
-	FILE *f = fopen("saved_connectivity.txt", "w");
+	f = fopen("saved_connectivity.txt", "w");
 	if (f == NULL)
 	{
 	    printf("Error opening file!\n");
