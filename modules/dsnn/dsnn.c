@@ -1,11 +1,11 @@
 #include "dsnn.h"
 #include "basic.h"
+#include "biases.h"
 #include "encode_neuron.h"
 #include "synapse.h"
-#include "load_save.h"
-#include "biases.h"
 #include "initialize.h"
 #include "connect_retina.h"
+#include "load_save.h"
 #include "record.h"
 
 #include "create_input.h"
