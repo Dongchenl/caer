@@ -13,7 +13,7 @@ In the 'dsnn' module, there are 22 scripts. They are written in C. The main usag
 
 The main function.  <br />
 File Name | Main Usage
------------- | -------------
+------------ | ------------- 
 dsnn.c | The main function. It is called in the main loop of Caer. 
 
 Basic functions. <br />
