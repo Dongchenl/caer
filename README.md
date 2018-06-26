@@ -27,7 +27,7 @@ biases.h | Configure the biases of the analog neuron and synapse circuits on the
 encode_neuron.h | Encode the address of silicon neurons.
 synapse.h | Build physical synapses on neuromorphic hardware. 
 initialize.h | Initialize the network. 
-connect_davis.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
+connect_retina.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
 load_save.h | Load and save the learned synapse weights. 
 record.h | Record the neural activity on the chips. 
 
@@ -39,7 +39,7 @@ create_input.h | Create input neurons on the chips.
 create_feature.h | Create feature neurons on the chips. 
 create_output.h | Create multiple groups of output neurons on the chips.
 create_wta.h | Create the Neural State Machines (NSMs) for building the Winner-Take-All (WTA) mechanism, as well as the output selecting neurons.
-create_arbitor.h | Create neurons for the arbitration between learning and recognition pathways.
+create_arbitrator.h | Create neurons for the arbitration between learning and recognition pathways.
 
 Connect neurons with synapses on the chips.  <br />
 
@@ -66,7 +66,7 @@ Overall control of configuring the chips and the computing in the 'dsnn' module.
 
 File Name | Main Usage
 ------------ | -------------
-dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
+events_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
 
 # Usage
