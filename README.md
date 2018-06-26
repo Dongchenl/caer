@@ -11,30 +11,58 @@ It enables online reconfiguration of the connectivity between neurons and the we
 The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/' (https://github.com/ldcyx/caer/tree/master/modules/dsnn). <br />
 In the 'dsnn' module, there are 22 scripts. They are written in C. The main usage of the scripts is listed below. <br />
 
+The main function.  <br />
 File Name | Main Usage
 ------------ | -------------
 dsnn.c | The main function. It is called in the main loop of Caer. 
+
+Basic functions. <br />
+File Name | Main Usage
+------------ | -------------
 dsnn.h | Define the parameters. 
 basic.h | Define the basic low-level functions.
+biases.h | Configure the biases of the analog neuron and synapse circuits on the chips. 
 encode_neuron.h | Encode the address of silicon neurons.
 synapse.h | Build physical synapses on neuromorphic hardware. 
-layers.h | Build feature neurons. 
-update.h | Update the synapse weights in memory and update them on neuromorphic hardware. 
-create_column.h | Create multiple groups of output neurons. 
-build_column.h | Connect the feature neurons to output neurons. 
-scale_up_down.h | Simulate the mapping neurons of the recognition network. 
-create_nsm.h | Create the neural state machines to build the winner-take-all mechanism. 
-learn_column.h | Learn the synapse weight between feature neurons and the output neurons. 
-motor.h | Simulate the events sent from motor neurons. 
-load_save.h | Load and save the learned synapse weights. 
-learn.h | Control the writing and reading of the ring buffer. 
-biases.h | Configure the biases of the analog neuron and synapse circuits on the chips. 
 initialize.h | Initialize the network. 
-build_nsm.h | Build synapses of the Neural State Machines (NSMs) to form a Winner-Take-All (WTA) mechanism. 
 connect_davis.h | Configure the input neurons to receive events from DAVIS/DVS silicon retina. 
+load_save.h | Load and save the learned synapse weights. 
+record.h | Record the neural activity on the chips. 
+
+Assign the silicon neurons on the chips to different neuron groups.  <br />
+File Name | Main Usage
+------------ | -------------
+create_input.h | Create input neurons on the chips.
+create_feature.h | Create feature neurons on the chips. 
+create_output.h | Create multiple groups of output neurons on the chips.
+create_wta.h | Create the Neural State Machines (NSMs) for building the Winner-Take-All (WTA) mechanism, as well as the output selecting neurons.
+create_arbitor.h | Create neurons for the arbitration between learning and recognition pathways.
+
+Connect neurons with synapses on the chips.  <br />
+File Name | Main Usage
+------------ | -------------
+build_input.h | Connect the input neurons. 
+build_feature.h | Connect the feature neurons. 
+build_ouput.h | Connect the feature neurons to the output neurons. 
+build_wta.h | Connect the NSMs to form the WTA mechanism. 
+build_arbitrator.h | Connect the neurons for arbitration. 
+
+Perform the learning algorithm. <br /> 
+File Name | Main Usage
+------------ | -------------
+scale_up_down.h | Simulate the mapping neurons of the recognition network. 
+learn_input.h | Learn to maintain the visibility during the simulated microsaccades and update them on neuromorphic hardware.
+learn_output.h | Learn the combination of feature neurons.
+learn_wta.h | Learn the synapse weight between feature neurons and the output neurons. 
+motor.h | Simulate the events sent from motor neurons. 
+learn.h | Control the writing and reading of the ring buffer. 
+
+Overall control of the computing and configuring. <br />
+File Name | Main Usage
+------------ | -------------
 dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
-record.h | Record the neural activity on the chips. 
+
 
 # Usage
 
