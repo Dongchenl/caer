@@ -39,7 +39,7 @@ create_input.h | Create input neurons on the chips.
 create_feature.h | Create feature neurons on the chips. 
 create_output.h | Create multiple groups of output neurons on the chips.
 create_wta.h | Create the Neural State Machines (NSMs) for building the Winner-Take-All (WTA) mechanism, as well as the output selecting neurons.
-create_arbitor.h | Create neurons for the arbitration between learning and recognition pathways.
+create_arbitrator.h | Create neurons for the arbitration between learning and recognition pathways.
 
 Connect neurons with synapses on the chips.  <br />
 
@@ -66,7 +66,7 @@ Overall control of configuring the chips and the computing in the 'dsnn' module.
 
 File Name | Main Usage
 ------------ | -------------
-dynapse_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
+events_output.h | Configure the output neurons to send spikes to the ROLLS chip. 
 reset.h | Reset the learning algorithm and the network.
 
 # Usage
