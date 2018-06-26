@@ -12,11 +12,13 @@ The on-line learning algorithm is implemented as a module at 'caer/modules/dsnn/
 In the 'dsnn' module, there are 22 scripts. They are written in C. The main usage of the scripts is listed below. <br />
 
 The main function.  <br />
+
 File Name | Main Usage
 ------------ | ------------- 
 dsnn.c | The main function. It is called in the main loop of Caer. 
 
 Basic functions. <br />
+
 File Name | Main Usage
 ------------ | -------------
 dsnn.h | Define the parameters. 
